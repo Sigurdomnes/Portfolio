@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import './fonts/Montserrat-Alt1-0.3.2/fonts/webfonts/MontserratAlt1-Thin.woff'
+import './fonts/Montserrat-Alt1-0.3.2/fonts/webfonts/MontserratAlt1-Thin.woff2'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

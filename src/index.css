@@ -1,5 +1,69 @@
-body {
+@font-face {
+  font-family: 'BebasNeue';
+  src: local('BebasNeue-Regular'),
+    url('./fonts/BebasNeue-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: local('Montserrat'),
+    url('./fonts/Montserrat/Montserrat-VariableFont_wght.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'AlexBrush';
+  src: local('AlexBrush'),
+    url('./fonts/Alex_Brush/AlexBrush-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: "Montserrat-Alt1";
+  font-weight: 1000;
+  font-style: normal;
+  src: local('Montserrat-Alt1'),
+    url("./fonts/Montserrat-Alt1-0.3.2/fonts/webfonts/MontserratAlt1-Light.woff") format("woff"),
+    url("./fonts/Montserrat-Alt1-0.3.2/fonts/webfonts/MontserratAlt1-Light.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: 'Audiowide';
+  src: local('Audiowide'),
+    url("./fonts/Audiowide/Audiowide-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Jura';
+  src: local('Jura'),
+    url("./fonts/Jura//Jura-VariableFont_wght.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Open-Sans';
+  src: local('Open-Sans'),
+       url('./fonts/Open_Sans/OpenSans-VariableFont_wdth\,wght.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'JetBrainsMono';
+  src: local('JetBrainsMono'),
+       url('./fonts/JetBrainsMono-2.304/fonts/ttf/JetBrainsMonoNL-Regular.ttf') format('truetype');
+}
+
+:root {
+  --themecolor: #161922;
+  --accentcolor: #ccad00;
+  --light-background: #eee;
+  --dark-text: #333;
+  --nav-color: var(--main-themecolor);
+  font-size: 14px;
+}
+
+
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -10,4 +74,12 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+/* Responsive breakpoints */
+
+@media screen and (max-width: 600px) {
+  :root {
+      font-size: 14px;
+  }
 }
