@@ -37,8 +37,8 @@ function BasicCards(props) {
                     <div className='basic-cards-img-overlay' style={{ display: props.hoverOverlay && "block" }}>
                         <p className='basic-cards-overlay-title'>{props.hoverOverlayTitle}</p>
                         <p className='basic-cards-overlay-text'>{props.hoverOverlayText}</p>
-                        <button className={`${props.github ? "basic-cards-show-overlay-btn" : "basic-cards-hide-overlay-btn"}`}><FontAwesomeIcon icon="fa-brands fa-github" className="basic-cards-overlay-ico" />{props.githubText}</button>
-                        <button className={`${props.deployed ? "basic-cards-show-overlay-btn" : "basic-cards-hide-overlay-btn"}`}><FontAwesomeIcon icon="fa-solid fa-globe" className="basic-cards-overlay-ico" />{props.deployedText}</button>
+                        <a href={props.deployedLink}><button className={`${props.deployed ? "basic-cards-show-overlay-btn" : "basic-cards-hide-overlay-btn"}`}><FontAwesomeIcon icon="fa-solid fa-globe" className="basic-cards-overlay-ico" />{props.deployedText}</button></a>
+                        <a href={props.githubLink}><button className={`${props.github ? "basic-cards-show-overlay-btn" : "basic-cards-hide-overlay-btn"}`}><FontAwesomeIcon icon="fa-brands fa-github" className="basic-cards-overlay-ico" />{props.githubText}</button></a>
                     </div>
                     <img className='basic-cards-img' src={props.img} alt={props.imgAlt} loading={props.imgLoading} />
                     {props.title && <div className='basic-cards-title'>{props.titleText}</div>}

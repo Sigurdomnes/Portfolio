@@ -1,11 +1,10 @@
-import { useSwiper } from 'swiper/react';
 import RoundedBorderButton from '../../Components/RoundedBorderButton/RoundedBorderButton';
 import './About.css'
 import meg from '../../../img/meg.jpg'
 import Typewriter from 'typewriter-effect';
+import cv from '../../../Download/CV_Sigurd_Omnes.pdf'
 
 function About(props) {
-    const swiper = useSwiper();
     return (
         <div className='about-wrapper'>
             <div className='about-content'>
@@ -65,7 +64,7 @@ function About(props) {
                 width='15rem'
                 height='3.5rem'
                 download={true}
-                onClick={() => { swiper.slideTo(2); }} />
+                downloadFile={cv} />
         </div>
 
     );

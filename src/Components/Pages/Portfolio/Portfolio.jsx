@@ -36,6 +36,7 @@ function Portfolio() {
                     ribbonIcon={<FontAwesomeIcon icon="fa-brands fa-react" />}
                     github={true}
                     githubText='Github'
+                    githubLink='https://github.com/Sigurdomnes/portfolio'
                 />
                 <BasicCards
                     className='portfolio-cards'
@@ -47,8 +48,10 @@ function Portfolio() {
                     hoverOverlayText={"Clean mark-up, responsive and compliant with every WCAG 2.1 level AAA guideline."}
                     github={true}
                     githubText='Github'
+                    githubLink='https://github.com/Sigurdomnes/Basic-responsive-and-accessible-website'
                     deployed={true}
                     deployedText='Deployed'
+                    deployedLink='https://sigurdomnes.github.io/Basic-responsive-and-accessible-website/'
                 />
                 <BasicCards
                     className='portfolio-cards'
@@ -70,9 +73,8 @@ function Portfolio() {
                     img={github}
                     title={true}
                     titleText={'See more of my latest work on Github'}
-                    link={'https://sigurdomnes.github.io/Basic-responsive-and-accessible-website/'}
-                    github={true}
-                    githubText='Github' />
+                    link='https://github.com/Sigurdomnes'
+                />
 
                 {/* Mobile */}
                 <div className="portfolio-swiper-container">
@@ -103,7 +105,7 @@ function Portfolio() {
                         }}
                     >
                         <SwiperSlide>
-                        <div className='portfolio-scroll-arrow'><span></span></div>
+                            <div className='portfolio-scroll-arrow'><span></span></div>
                             <BasicCards
                                 img={pfl}
                                 imgAlt={''}
@@ -158,29 +160,29 @@ function Portfolio() {
                     </Swiper>
                     <div className={`portfolio-mobile-cards-descr-container ${indeks === 0 ? 'portfolio-activeslide' : 'portfolio-slide'}`}>
                         <div className='portfolio-mobile-cards-par'>
-                        Take the red pill and dive into the matrix of this web-app!
+                            Take the red pill and dive into the matrix of this web-app!
                         </div>
 
-                        <a href=""><button className="pf-m-c-d-btn"><FontAwesomeIcon icon="fa-brands fa-github" className="pf-m-c-d-ico" />Github</button></a>
+                        <a href="https://github.com/Sigurdomnes/portfolio"><button className="pf-m-c-d-btn"><FontAwesomeIcon icon="fa-brands fa-github" className="pf-m-c-d-ico" />Github</button></a>
                     </div>
                     <div className={`portfolio-mobile-cards-descr-container ${indeks === 1 ? 'portfolio-activeslide' : 'portfolio-slide'}`}>
                         <div className='portfolio-mobile-cards-par'>
-                        Clean mark-up, responsive and compliant with every WCAG 2.1 level AAA guideline. as required by Norwegian law.
+                            Clean mark-up, responsive and compliant with every WCAG 2.1 level AAA guideline. as required by Norwegian law.
                         </div>
-                        <a href="https://sigurdomnes.github.io/Basic-responsive-and-accessible-website/"><button className="pf-m-c-d-btn"><FontAwesomeIcon icon="fa-solid fa-globe" className="pf-m-c-d-ico"/>Deployed</button></a>
+                        <a href="https://sigurdomnes.github.io/Basic-responsive-and-accessible-website/"><button className="pf-m-c-d-btn"><FontAwesomeIcon icon="fa-solid fa-globe" className="pf-m-c-d-ico" />Deployed</button></a>
                         <a href="https://github.com/Sigurdomnes/Basic-responsive-and-accessible-website"><button className="pf-m-c-d-btn"><FontAwesomeIcon icon="fa-brands fa-github" className="pf-m-c-d-ico" />Github</button></a>
                     </div>
                     <div className={`portfolio-mobile-cards-descr-container ${indeks === 2 ? 'portfolio-activeslide' : 'portfolio-slide'}`}>
                         <div className='portfolio-mobile-cards-par'>
                             Track your workout sets and weights intuitively and easy, just like an old-school notebook diary - with modern features.
                         </div>
-                        <a href=""><button className="pf-m-c-d-btn"><FontAwesomeIcon icon="fa-brands fa-github" className="pf-m-c-d-ico" />Github</button></a>
+                        <a href="/"><button className="pf-m-c-d-btn"><FontAwesomeIcon icon="fa-brands fa-github" className="pf-m-c-d-ico" />Github</button></a>
                     </div>
                     <div className={`portfolio-mobile-cards-descr-container ${indeks === 3 ? 'portfolio-activeslide' : 'portfolio-slide'}`}>
                         <div className='portfolio-mobile-cards-par'>
                             Check if there is a new project in the works!
                         </div>
-                        <a href=""><button className="pf-m-c-d-btn"><FontAwesomeIcon icon="fa-brands fa-github" className="pf-m-c-d-ico" />Let's go</button></a>
+                        <a href="https://github.com/Sigurdomnes"><button className="pf-m-c-d-btn"><FontAwesomeIcon icon="fa-brands fa-github" className="pf-m-c-d-ico" />Let's go</button></a>
                     </div>
                 </div>
             </div>

@@ -1,6 +1,5 @@
 import './NavBar.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { useState } from 'react';
 import { useSwiper } from 'swiper/react';
 import RoundedBorderButton from '../../Components/RoundedBorderButton/RoundedBorderButton';
 import useClickOutside from '../../Hooks/useClickOutside';
