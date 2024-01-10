@@ -1,5 +1,32 @@
 .App {
   min-height: 100dvh;
   overflow: hidden;
-  background-color: #eee;
+  background: url(./img/background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.zoom {
+    animation: zoom 1.65s ease;
+    -webkit-animation: zoom 1.65s ease;
+}
+
+@keyframes zoom {
+  0% {transform: scale(1, 1);}
+
+  20% {transform: scale(0.75, 0.75);}
+
+  80% {transform: scale(0.75, 0.75);}
+
+  100% {transform: scale(1, 1);}
+}
+
+@-webkit-keyframes zoom {
+  0% {transform: scale(1, 1);}
+
+  20% {transform: scale(0.75, 0.75);}
+
+  80% {transform: scale(0.75, 0.75);}
+
+  100% {transform: scale(1, 1);}
 }

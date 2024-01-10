@@ -1,12 +1,14 @@
 import './ContactForm.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-function ConctactForm({ contactForm, setContactForm }) {
+function ContactForm({ contactForm, setContactForm }) {
     return (
         <div className={`contact-form-wrapper ${contactForm ? "active" : "inactive"}`}>
             <div className='contact-form-blocker' onClick={() => { setContactForm(false) }}></div>
             <div className='contact-form-container'>
-                <FontAwesomeIcon className='contact-form-icon-close' icon="fas fa-times" onClick={() => { setContactForm(false) }} />
+                <button className='contact-form-btn-close' onClick={() => { setContactForm(false) }}>
+                <FontAwesomeIcon icon="fas fa-times" />
+                </button>
                 <h1 className='contact-form-header'>Contact me</h1>
                 <form className='contact-form'>
                     <div className='contact-form-section'>
@@ -31,4 +33,4 @@ function ConctactForm({ contactForm, setContactForm }) {
     )
 }
 
-export default ConctactForm
+export default ContactForm

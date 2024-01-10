@@ -2,7 +2,7 @@
     --browserHeight: 2.2rem;
     --basic-cards-shadow-color: #333;
     --basic-cards-shadow-radius: 5px;
-    --basic-cards-browser-bg-color: #222015;
+    --basic-cards-browser-bg-color: #1e201f;
     --basic-cards-browser-text-color: #eee;
     --height: 15rem;
     --width: 25rem;
@@ -14,7 +14,7 @@
     background: #333;
     overflow: hidden;
     box-shadow: 0 0 2px #000;
-    border-radius: .4rem;
+    border-radius: .2rem;
 
     .basic-cards-browser-text {
         position: absolute;
@@ -44,18 +44,18 @@
             justify-content: center;
             align-items: center;
             cursor: default;
-            height: calc(var(--height) - var(--browserHeight) + .1rem);
+            height: var(--height);
             width: 25rem;
-            padding: 2rem 1rem;
+            top: 0;
+            border-radius: .1rem;
+            padding: 2rem;
             transition: .4s ease;
             color: transparent;
-            border-end-end-radius: .2rem;
-            border-end-start-radius: .2rem;
 
             &:hover {
-                background-color: #222222fa;
+                background-color: var(--basic-cards-browser-bg-color);
                 color: #f8f8f8;
-                text-shadow: 0 0 2px #000;
+                text-shadow: 0 0 1px #333;
 
                 .basic-cards-show-overlay-btn {
                     visibility: visible;
@@ -77,17 +77,18 @@
         .basic-cards-overlay-title {
             font-family: BebasNeue;
             letter-spacing: .2rem;
-            font-size: 1.4rem;
+            font-size: 1.6rem;
             color: var(--accentcolor);
             visibility: hidden;
             opacity: 0;
             transition: .4s ease;
             margin: 0 0 .2rem;
+            text-shadow: 0 0 1px #000;
         }
 
         .basic-cards-overlay-text {
-            font-family: Open-Sans, sans-serif;
-            font-size: 1.1rem;
+            font-family: Montserrat;
+            font-size: 1rem;
         }
 
         .basic-cards-show-overlay-btn {
@@ -99,14 +100,15 @@
             background: var(--accentcolor);
             border: none;
             margin: 1rem .5rem 0;
-            color: #222;
+            color: #111;
             font-size: 1.1rem;
             border-radius: 2px;
-            box-shadow: 0 0 1px #000;
+            box-shadow: 0 0 1px #222;
             cursor: pointer;
+            font-family: Open-Sans, sans-serif;
 
             &:hover {
-                transform: scale(1.1);
+                color: #ddd;
             }
         }
 
@@ -146,7 +148,7 @@
     &:before {
         position: absolute;
         margin-top: calc(0rem - var(--height));
-        margin-left: -22rem;
+        margin-left: -21.5rem;
 
         content: "";
         display: block;
@@ -156,6 +158,12 @@
         border-radius: 50%;
         box-shadow: 1rem 0 0 0 orange, 2rem 0 0 0 green;
     }
+
+    @media screen and (max-width: 600px) {
+        &:before {
+            margin-left: -20.5rem;
+        }
+      }
 
     .ribbon-box {
         margin-bottom: var(--browserHeight);
@@ -208,8 +216,6 @@
     }
 
     .basic-cards-img-overlay {
-        height: calc(var(--height) + .2rem);
-        padding: 2.5rem .5rem;
         border-radius: .8rem;
     }
 }

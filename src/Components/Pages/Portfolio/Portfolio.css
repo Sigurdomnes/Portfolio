@@ -5,28 +5,17 @@
     flex-direction: column;
     height: 100dvh;
     width: 100%;
-    --portfolio-background: var(--themecolor);
-    color: var(--light-background);
+    color: var(--light-color);
     overflow: hidden;
-
-    --s: 50px;
-    --c: var(--themecolor);
-    --_s: calc(2*var(--s)) calc(2*var(--s));
-    --_g: 35.36% 35.36% at;
-    --_c: #0000 66%, #29200683 68% 70%, #0000 72%;
-    background:
-        radial-gradient(var(--_g) 100% 25%, var(--_c)) var(--s) var(--s)/var(--_s),
-        radial-gradient(var(--_g) 0 75%, var(--_c)) var(--s) var(--s)/var(--_s),
-        radial-gradient(var(--_g) 100% 25%, var(--_c)) 0 0/var(--_s),
-        radial-gradient(var(--_g) 0 75%, var(--_c)) 0 0/var(--_s),
-        repeating-conic-gradient(var(--c) 0 25%, #0000 0 50%) 0 0/var(--_s),
-        radial-gradient(var(--_c)) 0 calc(var(--s)/2)/var(--s) var(--s) var(--c);
-    background-attachment: fixed;
+    background-color: var(--themecolor);
 
     .portfolio-h1 {
         font-family: BebasNeue;
-        font-size: 3.2rem;
+        font-size: 3.5rem;
         letter-spacing: .2rem;
+        color: var(--accentcolor);
+        margin-bottom: .5rem;
+        z-index: 1;
 
         @media screen and (max-width: 600px) {
             display: none;
@@ -38,7 +27,7 @@
         font-family: Open-Sans, Arial;
         font-size: 1rem;
         letter-spacing: .1rem;
-        color: var(--accentcolor);
+        z-index: 1;
 
         @media screen and (max-width: 600px) {
             display: none;
@@ -57,6 +46,8 @@
         margin-top: 3rem;
         margin-bottom: 4rem;
         grid-template-columns: repeat(auto-fit, min(25rem));
+        position: relative;
+        z-index: 1;
 
         @media screen and (max-width: 810px) {
             width: 95vw;
@@ -76,7 +67,7 @@
 }
 
 .portfolio-swiper {
-    height: 18rem;
+    height: 17rem;
     width: auto;
     margin: .5rem 0;
 
@@ -99,6 +90,8 @@
     font-family: BebasNeue;
     text-shadow: 0 0 1px #000;
     text-align: center;
+    color: var(--accentcolor);
+    font-size: 1.5rem;
 }
 
 .portfolio-mobile-cards-h1 {
@@ -108,12 +101,12 @@
     justify-self: center;
     letter-spacing: .15rem;
     margin: 0 0 .5rem;
-    color: var(--accentcolor);
     text-shadow: 0 0 2px #000;
     font-size: 2.5rem;
     border-bottom: 1px solid var(--accentcolor);
     padding: .2rem 0 .6rem;
     margin-bottom: 1rem;
+    margin-top: -.2rem;
 }
 
 .portfolio-mobile-cards-descr-container {
@@ -130,7 +123,7 @@
         justify-content: center;
         letter-spacing: 0;
         font-size: 1.2rem;
-        color: var(--light-background);
+        color: var(--light-color);
         min-height: 5rem;
         text-shadow: 0 0 2px #000;
         margin: .5rem .5rem;
@@ -142,7 +135,7 @@
         margin: .2rem .4rem 1.5rem;
         background: var(--accentcolor);
         border: none;
-        color: #222;
+        color: var(--themecolor);
         font-size: 1.2rem;
         border-radius: 2px;
         box-shadow: 0 0 2px #000;
@@ -155,6 +148,7 @@
 
 .portfolio-contact-btn {
     margin: 1.5rem 0 5.1rem;
+    z-index: 1;
 
     &:hover {
         color: #222;
@@ -221,7 +215,7 @@
 
 @-webkit-keyframes sdb10 {
     0% {
-        -webkit-transform: translate(0, 35px);
+        -webkit-transform: translate(0, 40px);
         opacity: 0;
     }
 
@@ -230,7 +224,7 @@
     }
 
     80% {
-        -webkit-transform: translate(0, -.65rem);
+        -webkit-transform: translate(0, 0rem);
         opacity: 0;
     }
 
@@ -241,7 +235,7 @@
 
 @keyframes sdb10 {
     0% {
-        transform: translate(0, 35px);
+        transform: translate(0, 40px);
         opacity: 0;
     }
 
@@ -250,7 +244,7 @@
     }
 
     80% {
-        transform: translate(0, -.65rem);
+        transform: translate(0, 0rem);
         opacity: 0;
     }
 

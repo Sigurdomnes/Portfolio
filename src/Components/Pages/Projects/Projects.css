@@ -1,0 +1,22 @@
+.projects-card {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    height: 100dvh;
+    width: 100%;
+    color: var(--light-color);
+}
+
+.projects-landing {
+    background: var(--themecolor);
+
+    .projects-landing-header {
+        font-size: 3rem;
+        font-family: BebasNeue;
+        letter-spacing: .2rem;
+    }
+}
+
+.portfolio-website  {
+    background: teal;
+}

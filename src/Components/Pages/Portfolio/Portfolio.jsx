@@ -29,7 +29,7 @@ function Portfolio() {
                     browser={true}
                     browserText={'sigurdomnes.com'}
                     hoverOverlay={true}
-                    hoverOverlayTitle={'Portfolio'}
+                    hoverOverlayTitle={'Portfolio website'}
                     hoverOverlayText={"Take the red pill and dive into the matrix of this web-app!"}
                     cornerRibbon={true}
                     ribbonText='React.js'
@@ -45,7 +45,7 @@ function Portfolio() {
                     browserText={'Responsive & Accessible'}
                     hoverOverlay={true}
                     hoverOverlayTitle={'Proof of concept'}
-                    hoverOverlayText={"Clean mark-up, responsive and compliant with every WCAG 2.1 level AAA guideline."}
+                    hoverOverlayText={"Clean vanilla HTML/CSS. Completely responsive and compliant with every WCAG 2.1 level AAA guideline."}
                     github={true}
                     githubText='Github'
                     githubLink='https://github.com/Sigurdomnes/Basic-responsive-and-accessible-website'
@@ -90,15 +90,18 @@ function Portfolio() {
                         direction={'vertical'}
                         allowTouchMove={true}
                         modules={[EffectCube, Pagination]}
-                        shadow={false}
-                        slideShadows={false}
+                        cubeEffect={{
+                            shadow: false,
+                            slideShadows: false,
+                            shadowScale: 0
+                        }}
+
                         onSlideChange={
                             (e) => { setIndeks(e.realIndex) }
                         }
-                        shadowScale={0}
                         className="portfolio-swiper"
                         style={{
-                            '--swiper-pagination-color': '#e4ab00',
+                            '--swiper-pagination-color': 'var(--accentcolor)',
                             '--swiper-pagination-bullet-inactive-opacity': '0.5',
                             '--swiper-pagination-bullet-size': '8px',
                             '--swiper-pagination-bullet-vertical-gap': '5px',
@@ -109,12 +112,11 @@ function Portfolio() {
                             <BasicCards
                                 img={pfl}
                                 imgAlt={''}
-                                imgLoading={'eager'}
                                 browser={true}
                                 browserHeight='3rem'
                                 browserText={'sigurdomnes.com'}
                                 hoverOverlay={false}
-                                height='18rem'
+                                height='17rem'
                                 width='92vw'
                                 cornerRibbon={true}
                                 ribbonText='React.js'
@@ -124,12 +126,11 @@ function Portfolio() {
                         <SwiperSlide>
                             <BasicCards
                                 img={basic}
-                                imgLoading={'eager'}
                                 browser={true}
                                 browserHeight='3rem'
                                 browserText={'Responsive & Accessible'}
                                 hoverOverlay={false}
-                                height='18rem'
+                                height='17rem'
                                 width='92vw'
                             />
                         </SwiperSlide>
@@ -138,7 +139,7 @@ function Portfolio() {
                                 img={db}
                                 imgAlt={''}
                                 device={true}
-                                height='18rem'
+                                height='17rem'
                                 width='92vw'
                                 cornerRibbon={true}
                                 ribbonText='Coming'
@@ -149,10 +150,9 @@ function Portfolio() {
                         <SwiperSlide>
                             <BasicCards
                                 img={github}
-                                imgLoading={'eager'}
                                 title={true}
                                 titleText={'See more of my latest work on Github'}
-                                height='18rem'
+                                height='17rem'
                                 width='92vw'
                             />
 
@@ -188,14 +188,9 @@ function Portfolio() {
             </div>
             <RoundedBorderButton
                 className='portfolio-contact-btn'
-                color='var(--light-background)'
-                bgColor='#191b22'
-                hoverFill='var(--accentcolor)'
-                hoverColor='var(--themecolor)'
                 text={'About'}
                 arrow={true}
                 width='15rem'
-                height='3.5rem'
                 onClick={() => { swiper.slideTo(2); }} />
         </div >
     );
