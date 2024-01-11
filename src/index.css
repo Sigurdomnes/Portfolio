@@ -44,10 +44,29 @@
 
 :root {
   --themecolor: #1f2125;
-  --accentcolor: #668f7a;
-  --light-color: #eee;
-  --dark-color: #444;
+  --themecoloropacity: #1f212500;
+  --accentcolor: hsl(160, 22%, 56%);
+  --accentcoloropacity: #668f7a2d;
+  --hue: 180;
+  --hexagonfill: #302121;
+  --light-color: #ddd;
+  --light-static: #ddd;
+  --dark-color: #222;
+  --dark-static: #222;
   font-size: 14px;
+}
+
+h1,h2,h3 {
+  font-family: BebasNeue;
+  letter-spacing: .1rem;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+p {
+  font-family: Open-Sans;
 }
 
 a {

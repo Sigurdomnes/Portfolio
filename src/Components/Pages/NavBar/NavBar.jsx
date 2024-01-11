@@ -21,21 +21,27 @@ const NavBar = ({ setContactForm, navMenu, setNavMenu, darkMode, setDarkMode, ..
         }
     }
     const toggleDarkMode = () => {
-      if (darkMode) {
-        setDarkMode(false);
-        document.documentElement.style.setProperty('--themecolor', '#eee');
-        document.documentElement.style.setProperty('--light-color', '#333');
-      } else {
-        setDarkMode(true);
-        document.documentElement.style.setProperty('--themecolor', '#1f2125');
-        document.documentElement.style.setProperty('--light-color', '#eee');
-      }
+        if (darkMode) {
+            setDarkMode(false);
+            document.documentElement.style.setProperty('--themecolor', '#dfe3ee');
+            document.documentElement.style.setProperty('--light-color', '#333');
+            document.documentElement.style.setProperty('--dark-color', '#ddd');
+        } else {
+            setDarkMode(true);
+            document.documentElement.style.setProperty('--themecolor', '#1f2125');
+            document.documentElement.style.setProperty('--light-color', '#ddd');
+            document.documentElement.style.setProperty('--dark-color', '#222');
+        }
     }
     const swiper = useSwiper();
     return (
         <div className='navbar-wrapper' style={{ '--color': props.color, '--hover-bg-color': props.hoverBgColor, '--hover-color': props.hoverColor }}>
             <div className='navbar-content' style={{ backgroundColor: props.bgColor, border: props.border }}>
-                <div className='navbar-logo' onClick={() => { swiper.slideTo(0); setNavMenu(false); }}>S</div>
+                <div className='mobile-top-wrapper'>
+                    <div className={`navbar-logo  ${props.activeLink !== 1 ? 'navbar-logo-mobile' : ''}`} onClick={() => { swiper.slideTo(0); setNavMenu(false); }}>S</div>
+                    <h1 className='navbar-header'>{props.header}</h1>
+                    {props.activeLink === 1 && <DarkModeToggleBtn className='dark-mode-toggle-btn' onClick={toggleDarkMode} checked={darkMode} /> }
+                </div>
                 <div className='navmenu-wrapper'>
                     <ul ref={clickOutsideRef} className={`navmenu-links-container ${navMenu ? "active" : "inactive"}`} onClick={() => { setNavMenu(false); setToggle(false); }} >
                         <li className={`navmenu-links  ${props.activeLink === 1 ? "active" : ""}`} onClick={() => { swiper.slideTo(0); setNavMenu(false); }}><FontAwesomeIcon className='icon' icon="fa-solid fa-house-chimney-user" />Home</li>
@@ -51,7 +57,6 @@ const NavBar = ({ setContactForm, navMenu, setNavMenu, darkMode, setDarkMode, ..
                             <path className="line line3" d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942" />
                         </svg>
                     </button>
-                    <DarkModeToggleBtn className='dark-mode-toggle-btn' onClick={toggleDarkMode} checked={darkMode}/>
                     {props.button &&
                         <RoundedBorderButton
                             className='navbar-mobile-nextpg-btn'

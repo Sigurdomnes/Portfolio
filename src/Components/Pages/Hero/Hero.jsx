@@ -3,16 +3,13 @@ import avatar from '../../../img/avatar.svg'
 import { useSwiper } from 'swiper/react';
 import RoundedBorderButton from '../../Components/RoundedBorderButton/RoundedBorderButton';
 import DrifterStars from '@devil7softwares/react-drifter-stars'
+import HexagonBackground from '../../Components/HexagonBackground/HexagonBackground';
 
 function Hero(props) {
     const swiper = useSwiper();
     return (
         <div className='hero-wrapper'>
-            {props.show &&
-            <DrifterStars 
-            color='#5fac86'
-            blurSize='0'
-            />}
+            <HexagonBackground />
             <div className='hero-content'>
                 <h1 className='hero-content-center-header'>
                     Sigurd Omnes

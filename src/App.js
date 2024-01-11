@@ -14,8 +14,8 @@ import 'swiper/css/effect-cube';
 import { EffectCube } from 'swiper/modules';
 import { useState } from 'react';
 import ConctactForm from './Components/Components/ContactForm/ContactForm';
-import Fullpage from './Components/Modules/Fullpage/Fullpage';
 import Projects from './Components/Pages/Projects/Projects';
+import { Helmet } from 'react-helmet';
 
 function App() {
   const [indeks, setIndeks] = useState(0);
@@ -32,9 +32,23 @@ function App() {
       setSlideZoom(false);
     }, 350);
   }
-
   return (
     <div className='App'>
+      {indeks === 0 &&
+        <Helmet>
+          <title>Sigurd Omnes</title>
+          <meta name="Sigurd Omnes" content="Home" />
+        </Helmet>}
+      {indeks === 1 &&
+        <Helmet>
+          <title>Sigurd Omnes - Projects</title>
+          <meta name="Sigurd Omnes" content="Projects" />
+        </Helmet>}
+        {indeks === 2 &&
+        <Helmet>
+          <title>Sigurd Omnes - About</title>k
+          <meta name="Sigurd Omnes" content="About" />
+        </Helmet>}
       <Socials
         show={indeks === 0}
       />
@@ -50,7 +64,7 @@ function App() {
         }
         onTransitionStart={onTransitionStart}
         onTransitionEnd={onTransitionEnd}
-        allowTouchMove={false}
+        allowTouchMove={true}
         keyboard={{
           enabled: true,
         }}
@@ -80,6 +94,7 @@ function App() {
         </SwiperSlide>
         <SwiperSlide>
           <NavBar
+            header='Projects'
             setContactForm={setContactForm}
             darkMode={darkMode}
             setDarkMode={setDarkMode}
@@ -108,6 +123,7 @@ function App() {
       </SwiperSlide> */}
         <SwiperSlide>
           <NavBar
+            header='About'
             setContactForm={setContactForm}
             darkMode={darkMode}
             setDarkMode={setDarkMode}

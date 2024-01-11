@@ -11,7 +11,8 @@
   color: var(--color);
   font-size: 1.2rem;
   z-index: 20;
-  background: #00000008;
+  background: var(--themecoloropacity);
+  pointer-events: none;
 
   --color: var(--light-color);
   --hover-bg-color: var(--light-color);
@@ -22,20 +23,6 @@
     bottom: 0;
     height: auto;
   }
-
-  
-  .dark-mode-toggle-btn {
-    position: fixed;
-    right: 2rem;
-    bottom: 2rem;
-
-    @media screen and (max-width: 600px) {
-      bottom: unset;
-      top: 1.4rem;
-      right: 1rem;
-      z-index: 3;
-    }
-}
 
   .navbar-content {
     --navbar-width: 85vw;
@@ -49,37 +36,99 @@
     @media screen and (max-width: 600px) {
       width: 100vw;
       height: 6.5rem;
-      background-color: #1f2125e1;
-      border-top: 1px solid #111;
+
     }
 
-    .navbar-logo {
-      font-family: BebasNeue, Arial;
+    .mobile-top-wrapper {
       display: flex;
-      justify-content: center;
       align-items: center;
-      font-family: Audiowide;
-      font-size: 1.9rem;
-      border: 2px solid var(--accentcolor);
-      color: var(--color);
-      border-radius: 50%;
-      width: 2.8rem;
-      height: 2.8rem;
-      justify-self: start;
-      cursor: pointer;
-      z-index: 2;
-      transition: 0.6s ease;
-      color: var(--color);
-      box-shadow: 0 0 1px #888;
-      background-color: var(--themecolor);
+      grid-auto-flow: column;
 
       @media screen and (max-width: 600px) {
         position: fixed;
-        top: 1.5rem;
-        left: 1.4rem;
-        width: 3rem;
-        height: 3rem;
+        justify-content: center;
+        width: 100%;
+        height: 5rem;
+        padding: 0 .5rem 0 1rem;
+        top: 0;
+        background-color: var(--themecoloropacity);
+      }
+
+
+      .navbar-logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: Audiowide;
+        font-size: 1.9rem;
         border: 2px solid var(--accentcolor);
+        color: var(--color);
+        border-radius: 50%;
+        width: 2.8rem;
+        height: 2.8rem;
+        justify-self: start;
+        cursor: pointer;
+        z-index: 2;
+        transition: 0.6s ease;
+        color: var(--color);
+        box-shadow: 0 0 1px #888;
+        background-color: transparent;
+        pointer-events: all;
+
+        &.navbar-logo-mobile {
+
+          @media screen and (max-width: 600px) {
+            display: none;
+          }
+        }
+
+        @media screen and (max-width: 600px) {
+          width: 3rem;
+          height: 3rem;
+          border: 2px solid var(--accentcolor);
+          position: absolute;
+          left: 1rem;
+        }
+      }
+
+      .navbar-header {
+        display: grid;
+        justify-content: center;
+        position: absolute;
+        left: 10rem;
+        right: 10rem;
+        margin-top: .4rem;
+        margin-left: auto;
+        margin-right: auto;
+        font-family: montserrat-alt1;
+        text-transform: uppercase;
+        font-size: 2.2rem;
+        text-underline-offset: .25rem;
+        width: auto;
+        pointer-events: none;
+
+        @media screen and (max-width: 600px) {
+          justify-self: center;
+        }
+      }
+      
+      .dark-mode-toggle-btn {
+        position: fixed;
+        bottom: 1.5rem;
+        right: 2rem;
+        pointer-events: all;
+        cursor: pointer;
+        width: fit-content;
+        justify-self: center;
+
+
+        @media screen and (max-width: 600px) {
+          position: absolute;
+          bottom: unset;
+          right: 1rem;
+          z-index: 3;
+          margin-left: auto;
+        }
       }
     }
 
@@ -99,9 +148,10 @@
         grid-template-rows: repeat(4, 1fr);
         position: absolute;
         right: calc((100vw - var(--navbar-width)) / 2 + 60px);
-        top: 1rem;
+        top: 1.2rem;
         overflow: hidden;
         letter-spacing: 0.12rem;
+        pointer-events: all;
 
         @media screen and (max-width: 600px) {
           visibility: hidden;
@@ -119,9 +169,10 @@
         }
 
         &.inactive {
+
           /* Full screen */
           @media screen and (min-width: 600px) {
-            transform: translateY(-9.8rem);
+            transform: translateY(-9.95rem);
             transition: transform 0.5s ease;
 
             .navmenu-links {
@@ -139,6 +190,7 @@
               &:nth-of-type(even) {
                 transform: translateX(100vw);
               }
+
               &:nth-of-type(odd) {
                 transform: translateX(-100vw);
               }
@@ -147,6 +199,7 @@
         }
 
         &.active {
+
           /* Full screen */
           @media screen and (min-width: 600px) {
             transform: translateY(0);
@@ -189,7 +242,7 @@
           border-radius: 0.2rem;
           color: var(--color);
           transition: 0.5s ease;
-          background-color: var(--themecolor);
+          background-color: transparent;
 
           @media screen and (max-width: 600px) {
             width: 100vw;
@@ -239,24 +292,25 @@
           justify-content: center;
           width: 12rem;
           height: 2.8rem;
-          background-color: var(--themecolor);
+          background-color: transparent;
           font-family: BebasNeue;
           letter-spacing: 0.12rem;
           font-size: 1.3rem;
           cursor: pointer;
           align-self: center;
           padding-top: 0.1rem;
-          color: var(--color);
+          color: var(--light-color);
           border: 2px solid var(--accentcolor);
           transition: ease 0.5s;
           border-radius: 0.1rem;
+          pointer-events: all;
 
           @media screen and (max-width: 600px) {
             display: none;
           }
 
           &:hover {
-            color: var(--hover-color);
+            color: var(--dark-color);
             box-shadow: inset 7em 0 0 0 var(--accentcolor);
             background-color: var(--accentcolor);
           }
@@ -277,6 +331,7 @@
         position: absolute;
         transform: translateY(-34%);
         left: 1.25rem;
+        pointer-events: all;
 
         @media screen and (min-width: 600px) {
           display: none;
@@ -297,6 +352,7 @@
         border-radius: 50%;
         cursor: pointer;
         padding: 0.2rem;
+        pointer-events: all;
 
         @media screen and (max-width: 600px) {
           background: var(--accentcolor);
@@ -305,11 +361,14 @@
           height: 3.5rem;
           width: 3.5rem;
         }
-    }
+      }
 
       .collapse-btn {
+        margin-top: .25rem;
+
         @media screen and (max-width: 600px) {
           right: 1.7rem;
+          pointer-events: all;
         }
 
         .line {
@@ -335,8 +394,9 @@
 
         &.opened svg {
           .line {
-            stroke: var(--themecolor);
+            stroke: var(--dark-color);
           }
+
           .line1 {
             stroke-dasharray: 90 207;
             stroke-dashoffset: -134;

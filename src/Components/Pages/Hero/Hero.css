@@ -14,6 +14,8 @@
         align-items: center;
         z-index: 1;
         width: 100%;
+        pointer-events: none;
+        touch-action: none;
 
         .hero-content-center-header {
             font-family: 'Montserrat-Alt1';

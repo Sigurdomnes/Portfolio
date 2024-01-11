@@ -1,47 +1,34 @@
 import './DarkModeToggleBtn.css'
 
 function DarkModeToggleBtn(props) {
-  return (
-    <button className={props.className} onClick={props.onClick}>
-    <svg display="none">
-	<symbol id="light" viewBox="0 0 24 24">
-		<g stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-			<line x1="12" y1="17" x2="12" y2="20" transform="rotate(0,12,12)" />
-			<line x1="12" y1="17" x2="12" y2="20" transform="rotate(45,12,12)" />
-			<line x1="12" y1="17" x2="12" y2="20" transform="rotate(90,12,12)" />
-			<line x1="12" y1="17" x2="12" y2="20" transform="rotate(135,12,12)" />
-			<line x1="12" y1="17" x2="12" y2="20" transform="rotate(180,12,12)" />
-			<line x1="12" y1="17" x2="12" y2="20" transform="rotate(225,12,12)" />
-			<line x1="12" y1="17" x2="12" y2="20" transform="rotate(270,12,12)" />
-			<line x1="12" y1="17" x2="12" y2="20" transform="rotate(315,12,12)" />
-		</g>
-		<circle fill="currentColor" cx="12" cy="12" r="5" />
-	</symbol>
-	<symbol id="dark" viewBox="0 0 24 24">
-		<path fill="currentColor" d="M15.1,14.9c-3-0.5-5.5-3-6-6C8.8,7.1,9.1,5.4,9.9,4c0.4-0.8-0.4-1.7-1.2-1.4C4.6,4,1.8,7.9,2,12.5c0.2,5.1,4.4,9.3,9.5,9.5c4.5,0.2,8.5-2.6,9.9-6.6c0.3-0.8-0.6-1.7-1.4-1.2C18.6,14.9,16.9,15.2,15.1,14.9z" />
-	</symbol>
-</svg>
-<label htmlFor='checkbox' className="switch">
-	<input className="switch__input" type="checkbox" role="switch" name="dark" checked={props.checked} readOnly />
-	<svg className="switch__icon" width="24px" height="24px" aria-hidden="true">
-		<use href="#light" />
-	</svg>
-	<svg className="switch__icon" width="24px" height="24px" aria-hidden="true">
-		<use href="#dark" />
-	</svg>
-	<span className="switch__inner"></span>
-	<span className="switch__inner-icons">
-		<svg className="switch__icon" width="24px" height="24px" aria-hidden="true">
-			<use href="#light" />
-		</svg>
-		<svg className="switch__icon" width="24px" height="24px" aria-hidden="true">
-			<use href="#dark" />
-		</svg>
-	</span>
-	<span className="switch__sr">Dark Mode</span>
-</label>
-</button>
-  )
+	return (
+		<button className={props.className} onClick={props.onClick}>
+			<label class="switch">
+				<input class="switch__input" type="checkbox" role="switch" checked={props.checked} readOnly />
+				<svg class="switch__icon switch__icon--light" viewBox="0 0 12 12" width="12px" height="12px" aria-hidden="true">
+					<g fill="none" stroke="#fff" stroke-width="1" stroke-linecap="round">
+						<circle cx="6" cy="6" r="2" />
+						<g stroke-dasharray="1.5 1.5">
+							<polyline points="6 10,6 11.5" transform="rotate(0,6,6)" />
+							<polyline points="6 10,6 11.5" transform="rotate(45,6,6)" />
+							<polyline points="6 10,6 11.5" transform="rotate(90,6,6)" />
+							<polyline points="6 10,6 11.5" transform="rotate(135,6,6)" />
+							<polyline points="6 10,6 11.5" transform="rotate(180,6,6)" />
+							<polyline points="6 10,6 11.5" transform="rotate(225,6,6)" />
+							<polyline points="6 10,6 11.5" transform="rotate(270,6,6)" />
+							<polyline points="6 10,6 11.5" transform="rotate(315,6,6)" />
+						</g>
+					</g>
+				</svg>
+				<svg class="switch__icon switch__icon--dark" viewBox="0 0 12 12" width="12px" height="12px" aria-hidden="true">
+					<g fill="none" stroke="#fff" stroke-width="1" stroke-linejoin="round" transform="rotate(-45,6,6)">
+						<path d="m9,10c-2.209,0-4-1.791-4-4s1.791-4,4-4c.304,0,.598.041.883.105-.995-.992-2.367-1.605-3.883-1.605C2.962.5.5,2.962.5,6s2.462,5.5,5.5,5.5c1.516,0,2.888-.613,3.883-1.605-.285.064-.578.105-.883.105Z" />
+					</g>
+				</svg>
+				<span class="switch__sr">Dark Mode</span>
+			</label>
+		</button>
+	)
 }
 
 export default DarkModeToggleBtn

@@ -1,6 +1,6 @@
 .rounded-border-button {
   --rounded-btn-color: var(--light-color);
-  --rounded-btn-bg-color: var(--themecolor);
+  --rounded-btn-bg-color: var(--accentcolor);
   --rounded-btn-width: 10rem;
   --rounded-btn-bg-hover-color: var(--accentcolor);
   --rounded-btn-hover-color: var(--light-color);
@@ -8,7 +8,7 @@
   height: 4rem;
   border-radius: 5rem;
   border: 2px solid var(--accentcolor);
-  background-color: var(--rounded-btn-bg-color);
+  background-color: transparent;
   cursor: pointer;
   color: var(--rounded-btn-color);
   transition: .5s ease;
@@ -17,6 +17,7 @@
   grid-auto-flow: column;
   align-items: center;
   justify-content: center;
+  pointer-events: all;
 
   @media screen and (max-width: 300px) {
     transform: scale(0.8);
@@ -51,7 +52,7 @@
     margin-right: -0.6rem;
     -webkit-animation: arrow1 2s infinite;
     animation: arrow1 2s infinite;
-    color: var(--accentcolor);
+    color: var(--rounded-btn-bg-color);
     transition: 0.2s ease;
     height: 2rem;
     display: grid;
@@ -69,7 +70,7 @@
     margin-left: 0.4rem;
     margin-right: -0.5rem;
     margin-top: -0.1rem;
-    color: var(--accentcolor);
+    color: var(--rounded-btn-bg-color);
     animation: arrow2 2s infinite;
     transition: 0.3s ease;
     height: 2rem;

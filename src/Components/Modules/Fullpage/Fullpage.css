@@ -2,11 +2,17 @@
     height: 100dvh;
     width: 100%;
     overflow-y: auto;
-    background-color: white;
+    background-color: var(--themecolor);
+    touch-action: none;
+    overscroll-behavior: none; 
 
       /* hide scrollbar for IE, Edge and Firefox */
   -ms-overflow-style: none;
   scrollbar-width: none;
+
+  &.touch-lock {
+    overflow: hidden;   
+  }
 }
 
 /* hide scrollbar for chrome, safari and opera */
