@@ -1,25 +1,39 @@
 import './ProjectsCard.css'
 import './Projects.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { useState } from 'react';
 
-function ProjectsCard(props) {
+function ProjectsCard({ scrollPosition, ...props }) {
+    // Array of prog languages from json object
+    const languages = props.languages;
+    // Parallax effect (catches each id's start position)
+    const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
+    const id = props.id;
+    let top = ((scrollPosition - vh * (id + 1)) *.1) + 'px';
+
     return (
-        <div className={`projects-fullpage-card projects-card ${props.portfolio ? 'portfolio' : '' || props.consept ? 'consept' : ''}`}>
+        <div className={`projects-fullpage-card projects-card ${props.name === "concept" ? 'concept' : '' || props.name === "portfolio" ? 'portfolio' : ''}`}>
             <div className='projects-card-blocker' />
-            <div className='projects-card-content'>
-                <h1 className='projects-card-header'>{props.header}</h1>
-                <p className='projects-card-par'>
-                    {props.text}<br />{props.text2}<br /><br />{props.text3}
-                </p>
-                {props.portfolio && <div> <div className="projects-card-portfolio-lang-pct"></div>
-                <p className='projects-lang-bullet lang-css'>CSS</p>
-                <p className='projects-lang-bullet lang-js'>JavaScript</p>
-                <p className='projects-lang-bullet lang-html'>HTML</p>
-                <p className='projects-framework'><FontAwesomeIcon className='framework-icon' icon="fa-brands fa-react" />React</p>
-                </div>
-                }
-                <div className='projects-card-btn-container'>
-                    <button className='projects-card-btn'>Github</button>
+            <div className='scroll-blocker'>
+                <div style={{ transform: `translateY(${top})` }} className={`projects-card-content ${props.id % 2 === 0 ? 'project-cards-switch' : ''}`}>
+                    <h1 className='projects-card-header'>{props.header}</h1>
+                    <p className='projects-card-par'>
+                        {props.text}
+                    </p>
+                    <div>
+                        <div className={`projects-card-lang-pct-bar ${props.name === 'portfolio' ? 'portfolio-pct' : '' || props.name === 'concept' ? 'concept-pct' : ''}`} />
+                        {languages.map((language) => (
+                            <p key={language.id}
+                                className={`projects-lang-bullet ${language.name === 'JavaScript' ? 'lang-js' : '' || language.name === 'HTML' ? 'lang-html' : ''} `}>
+                                {language.name}<span className='projects-lang-pct'>{language.percent}</span>
+                            </p>
+                        ))}
+                        {props.name === 'portfolio' && <p className='projects-framework'><FontAwesomeIcon className='framework-icon' icon="fa-brands fa-react" />React</p>}
+                    </div>
+                    <div className='projects-card-btn-container'>
+                        {props.deployedLink && <a href={props.deployedLink}><button className='projects-card-btn'><FontAwesomeIcon icon="fa-solid fa-globe" className="projects-card-btn-icon" />Deployed</button></a>}
+                        {props.githubLink && <a href={props.githubLink}><button className='projects-card-btn'><FontAwesomeIcon icon="fa-brands fa-github" className='projects-card-btn-icon' />Github</button></a>}
+                    </div>
                 </div>
             </div>
         </div>

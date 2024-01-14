@@ -1,9 +1,11 @@
 import './Hero.css'
+import '../About/AboutFallingLetters.css'
 import avatar from '../../../img/avatar.svg'
 import { useSwiper } from 'swiper/react';
 import RoundedBorderButton from '../../Components/RoundedBorderButton/RoundedBorderButton';
 import DrifterStars from '@devil7softwares/react-drifter-stars'
 import HexagonBackground from '../../Components/HexagonBackground/HexagonBackground';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 function Hero(props) {
     const swiper = useSwiper();

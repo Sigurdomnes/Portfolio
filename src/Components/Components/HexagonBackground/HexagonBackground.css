@@ -8,7 +8,7 @@
     height: 100dvh;
     width: 100%;
     animation: animate 4s linear infinite;
-    background: rgba(255, 0, 0, 0.10);
+    background: #221515;
 
     @media screen and (max-width: 600px) {
         background: rgba(255, 0, 0, 0.247);
@@ -27,8 +27,8 @@
 
 .hexagon-row {
     display: inline-flex;
-    margin-left: -50px;
-    margin-top: -32px;
+    margin-left: -51px;
+    margin-top: -29px;
     overflow: hidden;
 }
 
@@ -41,9 +41,9 @@
     height: 110px;
     width: 100px;
     background: var(--dark-color);
-    margin: 1px;
+    margin: 2px;
     clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-    transition: 2s;
+    transition: .5s;
 }
 
 .hexagon:before {
@@ -59,6 +59,6 @@
 
 .hexagon:hover {
     transition: 0s;
-    background: rgb(0, 48, 0);
+    background: rgb(0, 34, 0);
     cursor: default;
 }

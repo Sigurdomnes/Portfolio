@@ -35,7 +35,7 @@ const NavBar = ({ setContactForm, navMenu, setNavMenu, darkMode, setDarkMode, ..
     }
     const swiper = useSwiper();
     return (
-        <div className='navbar-wrapper' style={{ '--color': props.color, '--hover-bg-color': props.hoverBgColor, '--hover-color': props.hoverColor }}>
+        <nav className='navbar-wrapper' style={{ '--color': props.color, '--hover-bg-color': props.hoverBgColor, '--hover-color': props.hoverColor }}>
             <div className='navbar-content' style={{ backgroundColor: props.bgColor, border: props.border }}>
                 <div className='mobile-top-wrapper'>
                     <div className={`navbar-logo  ${props.activeLink !== 1 ? 'navbar-logo-mobile' : ''}`} onClick={() => { swiper.slideTo(0); setNavMenu(false); }}>S</div>
@@ -68,7 +68,7 @@ const NavBar = ({ setContactForm, navMenu, setNavMenu, darkMode, setDarkMode, ..
                             onClick={() => { swiper.slideTo(2); setNavMenu(false); }} />}
                 </div>
             </div>
-        </div>
+        </nav>
     );
 }
 

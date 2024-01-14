@@ -95,23 +95,18 @@
         display: grid;
         justify-content: center;
         position: absolute;
-        left: 10rem;
-        right: 10rem;
+        left: 0rem;
+        right: 0rem;
         margin-top: .4rem;
         margin-left: auto;
         margin-right: auto;
         font-family: montserrat-alt1;
         text-transform: uppercase;
         font-size: 2.2rem;
-        text-underline-offset: .25rem;
         width: auto;
         pointer-events: none;
-
-        @media screen and (max-width: 600px) {
-          justify-self: center;
-        }
       }
-      
+
       .dark-mode-toggle-btn {
         position: fixed;
         bottom: 1.5rem;

@@ -1,0 +1,53 @@
+{
+    "cards": [
+        {
+            "id": 0,
+            "name": "portfolio",
+            "header": "Portfolio website",
+            "text": "This website is written from scratch in React. \n The responsive fullpage scroll module you are currently using to view these projects was written by me with JavaScript. \n\n Dive into the code if you'd like!",
+            "languages": [
+                {
+                    "id": 0,
+                    "name": "CSS",
+                    "percent": "52%"
+                },
+                {
+                    "id": 1,
+                    "name": "JavaScript",
+                    "percent": "46%"
+                },
+                {
+                    "id": 2,
+                    "name": "HTML",
+                    "percent": "2%"
+                }
+            ],
+            "githubLink": "https://github.com/Sigurdomnes/portfolio"
+        },
+        {
+            "id": 1,
+            "name": "concept",
+            "header": "Concept website",
+            "text": "Completely accessible and responsive. \n This website is written in clean best-practice HTML, fully accessible and compliant with every WCAG 2.1 guideline. It passes all tests for accesibility, screen readers, color-blindness and more. As required for websites by Norwegian law.\n\nTake a closer look!",
+            "languages": [
+                {
+                    "id": 0,
+                    "name": "CSS",
+                    "percent": "70%"
+                },
+                {
+                    "id": 1,
+                    "name": "JavaScript",
+                    "percent": "20%"
+                },
+                {
+                    "id": 2,
+                    "name": "HTML",
+                    "percent": "10%"
+                }
+            ],
+            "githubLink": "https://github.com/Sigurdomnes/Basic-responsive-and-accessible-website",
+            "deployedLink": "https://sigurdomnes.github.io/Basic-responsive-and-accessible-website/"
+        }
+    ]
+}
