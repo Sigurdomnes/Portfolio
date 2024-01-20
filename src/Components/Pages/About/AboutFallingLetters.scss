@@ -1,37 +1,22 @@
 .about-falling-letters-wrapper {
-    height: 100dvh;
+    height: 20dvh;
     display: grid;
-    align-items: end;
     width: 100%;
 
-    --scrollposition: 0px;
-
-    &:before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100dvh;
-        width: 100%;
-        background: var(--dark-color);
-
-    }
-
     .about-falling-letters-container {
-        height: 50rem;
-        position: fixed;
+        height: 20dvh;
+        width: 100vw;
         display: grid;
-        align-items: end;
+        align-items: center;
         justify-content: center;
         grid-auto-flow: column;
-        left: 0;
-        right: 0;
-        bottom: 0;
+        font-weight: bold;
         pointer-events: none;
-
+        transform: scale(0.6);
+        border: 1px solid red;
 
         @media screen and (max-width: 600px) {
-            transform: scale(.19) translate(0, 60rem);
+            transform: scale(0.4);
         }
 
         .about-falling-letter {
@@ -42,6 +27,7 @@
             width: fit-content;
             margin: 0 2rem;
             color: var(--accentcolor);
+            margin-bottom: -15rem;
 
             @media screen and (max-width: 600px) {}
         }
@@ -73,6 +59,9 @@
             animation: 3s s var(--sdelay) linear forwards;
             transform: translate(calc(0rem - var(--scrollposition) * .5), calc(6.7rem - var(--scrollposition) * 1.5)) rotate(70deg);
 
+            @media screen and (max-width: 600px) {
+                transform: translate(calc(34.5rem - (var(--scrollposition) * .2)), calc(-.8rem - var(--scrollposition) * 1)) rotate(59deg);
+            }
         }
 
         .abfl2 {
@@ -85,6 +74,10 @@
 
             animation: 3s g var(--gdelay) linear forwards;
             transform: translate(calc(-1.22rem - (var(--scrollposition) * .2)), calc(-2rem - var(--scrollposition) * 1)) rotate(51.5deg);
+
+            @media screen and (max-width: 600px) {
+                transform: translate(calc(18.4rem - var(--scrollposition) * .5), calc(-25rem - var(--scrollposition) * 1.5)) rotate(130deg);
+            }
         }
 
         .abfl4 {
@@ -101,17 +94,26 @@
         }
 
         .abfl6 {
-
             animation: 3s d var(--ddelay) linear forwards;
             transform: translate(calc(2.8rem + var(--scrollposition) * .5), calc(.5rem - var(--scrollposition) * 1)) rotate(130.2deg);
+
+            @media screen and (max-width: 600px) {
+                transform: translate(calc(-35.8rem + var(--scrollposition) * .5), calc(-31rem - var(--scrollposition) * 1)) rotate(310.2deg);
+            }
         }
 
         .abfl7 {
 
             font-size: 25rem;
             animation: 3s smile var(--smdelay) linear forwards;
-            transform: translate(calc(-46rem + var(--scrollposition) * 0.5), calc(-34.7rem - var(--scrollposition))) rotate(30deg);
+            transform: translate(calc(-45.8rem + var(--scrollposition) * 0.5), calc(-34.7rem - var(--scrollposition))) rotate(30deg);
             margin-left: -25rem;
+
+            @media screen and (max-width: 600px) {
+                font-size: 30rem;
+                margin-left: -29rem;
+                transform: translate(calc(-81.5rem + var(--scrollposition) * 0.5), calc(-32rem - var(--scrollposition))) rotate(30deg);
+            }
         }
     }
 }
@@ -413,7 +415,7 @@
     }
 
     90% {
-        transform: translate(1.4rem, -1.9rem) rotate(145deg);
+        transform: translate(1.4rem, -1.6rem) rotate(145deg);
     }
 
     100% {
@@ -441,11 +443,11 @@
     }
 
     80% {
-        transform: translate(1.4rem, -2rem) rotate(145deg);
+        transform: translate(1.4rem, -1.8rem) rotate(145deg);
     }
 
     90% {
-        transform: translate(1.4rem, -1.9rem) rotate(145deg);
+        transform: translate(1.4rem, -1.6rem) rotate(145deg);
     }
 
     100% {
@@ -537,11 +539,11 @@
     }
 
     70% {
-        transform: translate(-46rem, -34.7rem) rotate(30deg);
+        transform: translate(-45.8rem, -34.7rem) rotate(30deg);
     }
 
     90% {
-        transform: translate(-46rem, -34.7rem) rotate(30deg);
+        transform: translate(-45.8rem, -34.7rem) rotate(30deg);
     }
 
     100% {
@@ -569,11 +571,11 @@
     }
 
     70% {
-        transform: translate(-46rem, -34.7rem) rotate(30deg);
+        transform: translate(-45.8rem, -34.7rem) rotate(30deg);
     }
 
     90% {
-        transform: translate(-46rem, -34.7rem) rotate(30deg);
+        transform: translate(-45.8rem, -34.7rem) rotate(30deg);
     }
 
     100% {

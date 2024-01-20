@@ -3,8 +3,8 @@
 // Written by Sigurd Omnes
 //
 
-import "./Fullpage.css";
-import React, { useState, useRef } from "react";
+import "./Fullpage.scss";
+import React, { useState, useRef, useEffect } from "react";
 
 function Fullpage({ fullpageSlideIndex, setFullpageSlideIndex, fullpageScrollPosition, setFullpageScrollPosition, ...props }) {
 
@@ -16,6 +16,13 @@ function Fullpage({ fullpageSlideIndex, setFullpageSlideIndex, fullpageScrollPos
   // Scroll position
   // const [fullpageScrollPosition, setFullpageScrollPosition] = useState(0);
 
+  // Number of total fullpage slides
+  const [numberOfSlides, setNumberOfSlides] = useState(0);
+
+  // Set on page load
+  useEffect(() => {
+    setNumberOfSlides(wrapperRef.current.children.length);
+  }, [])
 
   const wrapperRef = useRef(null);
 
@@ -32,15 +39,15 @@ function Fullpage({ fullpageSlideIndex, setFullpageSlideIndex, fullpageScrollPos
   const scrollToPrev = () => {
     if (fullpageSlideIndex > 0) {
       const top = wrapperRef.current.offsetHeight;
-      wrapperRef.current.scrollTo({ top: (top * (fullpageSlideIndex -1)), behavior: 'smooth' });
+      wrapperRef.current.scrollTo({ top: (top * (fullpageSlideIndex - 1)), behavior: 'smooth' });
     }
   };
 
   // Desktop mouse wheel trigger function
   const handleScroll = (e) => {
-    if (e.deltaY > 5 && e.deltaY < 200) {
+    if (e.deltaY > 5) {
       scrollToNext();
-    } else if (e.deltaY < 5 && e.deltaY < 200) {
+    } else if (e.deltaY < -5) {
       scrollToPrev();
     }
   };
@@ -83,15 +90,22 @@ function Fullpage({ fullpageSlideIndex, setFullpageSlideIndex, fullpageScrollPos
     setFullpageSlideIndex(index);
   }
 
+  // Ratio for page indicator
+  let pct = ((100 / (numberOfSlides - 1)) * fullpageSlideIndex) + 'vw';
+
   return (
-    <div className={'fullpage-wrapper '} ref={wrapperRef}
-      onWheel={(e) => { handleScroll(e); }}
-      onTouchMove={(e) => { onTouchMove(e); }}
-      onTouchStart={(e) => { onTouchStart(e); }}
-      onTouchEnd={onTouchEnd}
-      onScroll={(e) => { e.preventDefault(); onScrollCatchPosition(e); }}>
-      {/* Children elements must be height dhv to work correctly on mobile */}
-      {props.children}
+    <div>
+      <div className={'fullpage-wrapper '} ref={wrapperRef}
+        onWheel={(e) => { handleScroll(e); }}
+        onTouchMove={(e) => { onTouchMove(e); }}
+        onTouchStart={(e) => { onTouchStart(e); }}
+        onTouchEnd={onTouchEnd}
+        onScroll={(e) => { onScrollCatchPosition(e); }}>
+        {/* Children elements' height must be dhv to work correctly on mobile */}
+        {props.children}
+      </div>
+      <div className="fullpage-indicator" style={{ '--pct': pct }} />
+      <div className='scroll-down-arrow' style={{ opacity: fullpageScrollPosition < 1 ? '1' : '0' }} onClick={scrollToNext} />
     </div>
   );
 }

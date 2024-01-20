@@ -43,12 +43,11 @@
 }
 
 :root {
-  --themecolor: #1f2125;
+  --themecolor: #1c1d1f;
   --themecoloropacity: #1f212500;
-  --accentcolor: #76a797;
-  --accentcoloropacity: #668f7a2d;
-  --hue: 180;
-  --hexagonfill: #302121;
+  --accentcolor: #703c3c;
+  --accentcoloropacity: #275a721f;
+  --hexagonbackground: #000000d0;
   --light-color: #ddd;
   --light-static: #ddd;
   --dark-color: #222;

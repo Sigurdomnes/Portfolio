@@ -1,24 +1,22 @@
-import './About.css'
-import './AboutFallingLetters.css'
+import './About.scss'
 import meg from '../../../img/meg.jpg'
 import Typewriter from 'typewriter-effect';
 import cv from '../../../Download/CV_Sigurd_Omnes.pdf'
 import RoundedBorderButton from '../../Components/RoundedBorderButton/RoundedBorderButton';
 import { useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 function About(props) {
-    const [scrollPosition, setScrollPosition] = useState("0px");
+    const [scrollPosition, setScrollPosition] = useState(0);
 
     const onScrollCatchPosition = (e) => {
-        setScrollPosition(e.target.scrollTop + "px");
+        setScrollPosition(e.target.scrollTop);
         console.log(scrollPosition);
     }
     return (
-        <div className={'about-wrapper'} onScroll={(e) => { onScrollCatchPosition(e); }}>
-            <div className="about-content">
-                <div className='about-falling-letters-wrapper' style={{ '--scrollposition': scrollPosition }}>
-                    {props.indeks && <h1 className='about-falling-letters-container'>
+        <div className={'about-wrapper'} onScroll={(e) => { onScrollCatchPosition(e); }} style={{ '--scrollposition': scrollPosition + 'px' }}>
+            <div className='about-content'>
+{/*                 <div className='about-falling-letters-wrapper'>
+                    {props.index && <div className='about-falling-letters-container'>
                         <div className='about-falling-letter abfl1'>S</div>
                         <div className='about-falling-letter abfl2'>i</div>
                         <div className='about-falling-letter abfl3'>g</div>
@@ -26,19 +24,8 @@ function About(props) {
                         <div className='about-falling-letter abfl5'>r</div>
                         <div className='about-falling-letter abfl6'>d</div>
                         <div className='about-falling-letter abfl7'><FontAwesomeIcon icon="fa-regular fa-face-laugh-squint" /></div>
-                    </h1>}
-                </div>
-                <div className='about-page'>
-                <img className='about-img' src={meg} />
-                </div>
-            </div>
-
-
-
-
-
-
-            {/* <div className='about-content'>
+                    </div>}
+                </div> */}
                 <h1 className='about-h1'>Sigurd Omnes</h1>
                 <p className='about-par'>Computer Engineering student</p>
                 <div className='about-programming-wrapper'>
@@ -61,19 +48,21 @@ function About(props) {
                     </div>
                     <img className='meg-img' src={meg} alt=''></img>
                     <div className='about-programming-ide-presentation'>
-                        {props.indeks &&
+                        {props.index &&
                             <Typewriter
                                 onInit={(typewriter) => {
                                     typewriter.pauseFor(800)
-                                        .typeString('<div style="color: var(--accentcolor); font-family: JetBrainsMono;">Hello world!</div>')
+                                        .typeString('<span style="color: var(--accentcolor); font-family: JetBrainsMono;">Hello world!</span>')
                                         .pauseFor(500)
-                                        .typeString(' My name is Sigurd Omnes.')
+                                        .typeString('<br/><br/>My name is Sigurd Omnes.')
                                         .pauseFor(200)
-                                        .typeString('<br/><br/> I like staring into the ocean as if I am thinking about something very important.')
+                                        .changeDelay(75)
+                                        .typeString('<br/><br/>I like staring into the ocean as if I am thinking about something very important.')
                                         .pauseFor(200)
-                                        .typeString('<br/><br/> I also like programming, so if you would like to talk about that, please hit me up or download my resumé below.')
+                                        .typeString('<br/><br/>I also like programming, so if you would like to talk about that, please hit me up or download my resumé below.')
                                         .pauseFor(200)
-                                        .typeString('<br/><br/> In a while, <div style="color: var(--accentcolor); font-family: JetBrainsMono; ">crocodile!</div>')
+                                        .changeDelay('natural')
+                                        .typeString('<br/><br/> In a while,<span style="color: var(--accentcolor); font-family: JetBrainsMono; "><br/>crocodile!</span>')
                                         .start();
                                 }}
                                 options={{
@@ -84,14 +73,14 @@ function About(props) {
                         }
                     </div>
                 </div>
-            </div>
-            <RoundedBorderButton
+                <RoundedBorderButton
                 className='about-resume-btn'
                 text={'Get my resumé'}
-                width='15rem'
+                width='14rem'
                 download={true}
                 downloadFile={cv}
-                    fileName="CV_Sigurd_Omnes" /> */}
+                fileName="CV_Sigurd_Omnes" />
+            </div>
         </div>
 
     );

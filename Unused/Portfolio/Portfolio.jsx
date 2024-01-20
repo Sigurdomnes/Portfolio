@@ -16,7 +16,7 @@ import { useState } from 'react';
 
 function Portfolio() {
     const swiper = useSwiper();
-    const [indeks, setIndeks] = useState(0);
+    const [index, setIndex] = useState(0);
     return (
         <div className='portfolio-wrapper'>
             <h1 className='portfolio-h1'>Portfolio</h1>
@@ -79,10 +79,10 @@ function Portfolio() {
                 {/* Mobile */}
                 <div className="portfolio-swiper-container">
                     <h2 className='portfolio-mobile-cards-header'>Projects:</h2>
-                    <h1 className={`portfolio-mobile-cards-h1 ${indeks === 0 ? 'portfolio-activeslide' : 'portfolio-slide'}`}>Portfolio website</h1>
-                    <h1 className={`portfolio-mobile-cards-h1 ${indeks === 1 ? 'portfolio-activeslide' : 'portfolio-slide'}`}>Proof of concept</h1>
-                    <h1 className={`portfolio-mobile-cards-h1 ${indeks === 2 ? 'portfolio-activeslide' : 'portfolio-slide'}`}>Workout diary app</h1>
-                    <h1 className={`portfolio-mobile-cards-h1 ${indeks === 3 ? 'portfolio-activeslide' : 'portfolio-slide'}`}>Behind the scenes</h1>
+                    <h1 className={`portfolio-mobile-cards-h1 ${index === 0 ? 'portfolio-activeslide' : 'portfolio-slide'}`}>Portfolio website</h1>
+                    <h1 className={`portfolio-mobile-cards-h1 ${index === 1 ? 'portfolio-activeslide' : 'portfolio-slide'}`}>Proof of concept</h1>
+                    <h1 className={`portfolio-mobile-cards-h1 ${index === 2 ? 'portfolio-activeslide' : 'portfolio-slide'}`}>Workout diary app</h1>
+                    <h1 className={`portfolio-mobile-cards-h1 ${index === 3 ? 'portfolio-activeslide' : 'portfolio-slide'}`}>Behind the scenes</h1>
                     <Swiper
                         effect={'cube'}
                         grabCursor={false}
@@ -97,7 +97,7 @@ function Portfolio() {
                         }}
 
                         onSlideChange={
-                            (e) => { setIndeks(e.realIndex) }
+                            (e) => { setIndex(e.realIndex) }
                         }
                         className="portfolio-swiper"
                         style={{
@@ -158,27 +158,27 @@ function Portfolio() {
 
                         </SwiperSlide>
                     </Swiper>
-                    <div className={`portfolio-mobile-cards-descr-container ${indeks === 0 ? 'portfolio-activeslide' : 'portfolio-slide'}`}>
+                    <div className={`portfolio-mobile-cards-descr-container ${index === 0 ? 'portfolio-activeslide' : 'portfolio-slide'}`}>
                         <div className='portfolio-mobile-cards-par'>
                             Take the red pill and dive into the matrix of this web-app!
                         </div>
 
                         <a href="https://github.com/Sigurdomnes/portfolio"><button className="pf-m-c-d-btn"><FontAwesomeIcon icon="fa-brands fa-github" className="pf-m-c-d-ico" />Github</button></a>
                     </div>
-                    <div className={`portfolio-mobile-cards-descr-container ${indeks === 1 ? 'portfolio-activeslide' : 'portfolio-slide'}`}>
+                    <div className={`portfolio-mobile-cards-descr-container ${index === 1 ? 'portfolio-activeslide' : 'portfolio-slide'}`}>
                         <div className='portfolio-mobile-cards-par'>
                             Clean mark-up, responsive and compliant with every WCAG 2.1 level AAA guideline. as required by Norwegian law.
                         </div>
                         <a href="https://sigurdomnes.github.io/Basic-responsive-and-accessible-website/"><button className="pf-m-c-d-btn"><FontAwesomeIcon icon="fa-solid fa-globe" className="pf-m-c-d-ico" />Deployed</button></a>
                         <a href="https://github.com/Sigurdomnes/Basic-responsive-and-accessible-website"><button className="pf-m-c-d-btn"><FontAwesomeIcon icon="fa-brands fa-github" className="pf-m-c-d-ico" />Github</button></a>
                     </div>
-                    <div className={`portfolio-mobile-cards-descr-container ${indeks === 2 ? 'portfolio-activeslide' : 'portfolio-slide'}`}>
+                    <div className={`portfolio-mobile-cards-descr-container ${index === 2 ? 'portfolio-activeslide' : 'portfolio-slide'}`}>
                         <div className='portfolio-mobile-cards-par'>
                             Track your workout sets and weights intuitively and easy, just like an old-school notebook diary - with modern features.
                         </div>
                         <a href="/"><button className="pf-m-c-d-btn"><FontAwesomeIcon icon="fa-brands fa-github" className="pf-m-c-d-ico" />Github</button></a>
                     </div>
-                    <div className={`portfolio-mobile-cards-descr-container ${indeks === 3 ? 'portfolio-activeslide' : 'portfolio-slide'}`}>
+                    <div className={`portfolio-mobile-cards-descr-container ${index === 3 ? 'portfolio-activeslide' : 'portfolio-slide'}`}>
                         <div className='portfolio-mobile-cards-par'>
                             Check if there is a new project in the works!
                         </div>

@@ -245,6 +245,28 @@ function HexagonBackground() {
                 <div className="hexagon"></div>
                 <div className="hexagon"></div>
             </div>
+            <div className="hexagon-row">
+                <div className="hexagon"></div>
+                <div className="hexagon"></div>
+                <div className="hexagon"></div>
+                <div className="hexagon"></div>
+                <div className="hexagon"></div>
+                <div className="hexagon"></div>
+                <div className="hexagon"></div>
+                <div className="hexagon"></div>
+                <div className="hexagon"></div>
+                <div className="hexagon"></div>
+                <div className="hexagon"></div>
+                <div className="hexagon"></div>
+                <div className="hexagon"></div>
+                <div className="hexagon"></div>
+                <div className="hexagon"></div>
+                <div className="hexagon"></div>
+                <div className="hexagon"></div>
+                <div className="hexagon"></div>
+                <div className="hexagon"></div>
+                <div className="hexagon"></div>
+            </div>
         </div>
 
     )

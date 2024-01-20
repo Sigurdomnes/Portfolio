@@ -1,6 +1,6 @@
 import Fullpage from '../../Modules/Fullpage/Fullpage'
-import './Projects.css'
-import { useRef, useState } from 'react';
+import './Projects.scss'
+import { useState } from 'react';
 import ProjectsLanding from './ProjectsLanding';
 import ProjectsCard from './ProjectsCard';
 import jsonCards from './jsonCards.json';
@@ -11,7 +11,6 @@ function Projects() {
   const cards = jsonCards.cards;
   return (
     <div>
-      <div className='scroll' style={{ opacity: fullpageScrollPosition < 1 ? '1' : '0' }}></div>
       <Fullpage
         fullpageSlideIndex={fullpageSlideIndex}
         setFullpageSlideIndex={setFullpageSlideIndex}

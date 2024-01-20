@@ -20,6 +20,7 @@
             object-fit: contain;
             object-position: center;
             width: 70vw;
+            margin-top: -1rem;
 
             @media screen and (min-width: 600px) {
                 width: 35rem;
@@ -27,10 +28,10 @@
         }
 
         .projects-landing-header {
-            font-size: 2rem;
+            font-size: 1.5rem;
             font-family: BebasNeue;
             letter-spacing: .2rem;
-            margin: 1.5rem 0 1rem;
+            margin: 1rem 0 0;
         }
 
         .projects-landing-par {
@@ -38,10 +39,16 @@
             font-family: Open-Sans;
             width: 38ch;
             pointer-events: none;
+            text-shadow: 0 0 3px #111;
 
             @media screen and (min-width: 600px) {
                 font-size: 1.3rem;
-                width: 45ch;
+                width: 50ch;
+            }
+
+            .projects-landing-strong {
+                text-decoration: underline;
+                text-underline-offset: .5rem;
             }
         }
 
@@ -55,7 +62,7 @@
             grid-gap: 0 .5rem;
             border-radius: 1rem;
             border: 1px solid var(--accentcolor);
-            margin: 2rem 0 1.5rem;
+            margin: .8rem 0 1.5rem;
             pointer-events: none;
             grid-template-columns: repeat(2, 1fr);
 
@@ -171,17 +178,132 @@
 
         .projects-contact-btn {
             z-index: 1;
+            display: none;
         
             &:hover {
                 color: #222;
             }
         
             @media screen and (max-width: 600px) {
-                position: absolute;
-                bottom: -4.65rem;
-                left: 1.5rem;
                 display: none;
             }
         }
     }
 }
+
+.nextarrow {
+    position: absolute;
+    bottom: 8rem;
+    right: 5rem;
+    height: 2rem;
+    width: 10rem;
+    font-family: BebasNeue;
+    font-size: 1.5rem;
+    color: var(--light-color);
+    text-shadow: 0 0 3px #000;
+    cursor: pointer;
+    pointer-events: all;
+    transition: .2s ease;
+    transform: scaleX(1);
+    z-index: 99;
+    display: none;
+
+
+    @media screen and (max-width: 600px) {
+        bottom: 2.1rem;
+        right: 2rem;
+    }
+
+
+    &.left {
+      left: 12rem;
+
+      .arrow {
+        transform: translate(-5.5rem, -1.5rem) rotate(-135deg);
+      }
+    }
+
+    &:hover {
+      color: var(--accentcolor);
+
+      &:after,
+      &:before {
+        background-color: var(--accentcolor);
+      }
+
+      .arrow {
+        border-color: var(--accentcolor);
+
+        &:before {
+          transform: translate(-1.5rem, -2.05rem) rotate(-90deg);
+        }
+
+        &:after {
+          transform: translate(-1.5rem, -2.05rem) rotate(90deg);
+        }
+      }
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      width: 5rem;
+      height: .1rem;
+      background-color: var(--light-color);
+      transform: translate(.5rem, .9rem);
+      transition: .2s ease;
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      width: 5rem;
+      height: .1rem;
+      transform: translate(-5.4rem, .9rem) scale(-1, -1);
+      background-color: var(--light-color);
+      transition: .2s ease;
+    }
+
+    .arrow {
+      transform: translate(7.5rem, -1.5rem) rotate(45deg);
+      position: absolute;
+      display: block;
+      width: 1rem;
+      height: 1rem;
+      margin-right: .4rem;
+      border-top: .2rem solid var(--light-color);
+      border-right: .2rem solid var(--light-color);
+      align-items: center;
+      justify-content: center;
+      background: transparent;
+      box-sizing: border-box;
+      z-index: 2;
+
+      &:before {
+        content: '';
+        position: absolute;
+        transform: translate(-1.5rem, -2.05rem) rotate(-60deg);
+        width: 4rem;
+        height: 4rem;
+        border: .25rem solid;
+        border-color: var(--accentcolor) var(--accentcolor) transparent transparent;
+        border-radius: 50%;
+        align-items: center;
+        transition: .3s ease;
+      }
+
+      &:after {
+        content: '';
+        display: inline-grid;
+        position: absolute;
+        transform: translate(-1.5rem, -2.05rem) rotate(60deg);
+        width: 4rem;
+        height: 4rem;
+        border: .25rem solid;
+        border-color: var(--accentcolor) var(--accentcolor) transparent transparent;
+        border-radius: 50%;
+        align-items: center;
+        transition: .3s ease;
+      }
+    }
+  }

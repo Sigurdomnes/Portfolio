@@ -1,7 +1,6 @@
 import './App.css';
 import Hero from './Components/Pages/Hero/Hero'
 import NavBar from './Components/Pages/NavBar/NavBar'
-import Portfolio from './Components/Pages/Portfolio/Portfolio'
 import Socials from './Components/Components/Socials/Socials'
 import About from './Components/Pages/About/About';
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -18,7 +17,7 @@ import Projects from './Components/Pages/Projects/Projects';
 import { Helmet } from 'react-helmet';
 
 function App() {
-  const [indeks, setIndeks] = useState(0);
+  const [index, setIndex] = useState(0);
   const [contactForm, setContactForm] = useState(false);
   const [typeWriter, setTypewriter] = useState(false);
   const [navMenu, setNavMenu] = useState(false);
@@ -34,23 +33,23 @@ function App() {
   }
   return (
     <div className='App'>
-      {indeks === 0 &&
+      {index === 0 &&
         <Helmet>
           <title>Sigurd Omnes</title>
           <meta name="Sigurd Omnes" content="Home" />
         </Helmet>}
-      {indeks === 1 &&
+      {index === 1 &&
         <Helmet>
           <title>Sigurd Omnes - Projects</title>
           <meta name="Sigurd Omnes" content="Projects" />
         </Helmet>}
-        {indeks === 2 &&
+        {index === 2 &&
         <Helmet>
           <title>Sigurd Omnes - About</title>k
           <meta name="Sigurd Omnes" content="About" />
         </Helmet>}
       <Socials
-        show={indeks === 0}
+        show={index === 0}
       />
       <ConctactForm
         setContactForm={setContactForm}
@@ -60,11 +59,11 @@ function App() {
         grabCursor={false}
         speed={1300}
         onSlideChange={
-          (e) => { setIndeks(e.realIndex); if (e.realIndex === 2) { setTypewriter(true) }; }
+          (e) => { setIndex(e.realIndex); if (e.realIndex === 2) { setTypewriter(true) }; }
         }
         onTransitionStart={onTransitionStart}
         onTransitionEnd={onTransitionEnd}
-        allowTouchMove={true}
+        allowTouchMove={false}
         keyboard={{
           enabled: true,
         }}
@@ -89,7 +88,7 @@ function App() {
             setNavMenu={setNavMenu}
           />
           <Hero
-            show={indeks === 0}
+            show={index === 0}
           />
         </SwiperSlide>
         <SwiperSlide>
@@ -104,6 +103,7 @@ function App() {
             btnArrow={true}
             navMenu={navMenu}
             setNavMenu={setNavMenu}
+            hide={true}
           />
           <Projects />
         </SwiperSlide>
@@ -135,7 +135,7 @@ function App() {
             setNavMenu={setNavMenu}
           />
           <About
-            indeks={typeWriter}
+            index={typeWriter}
           />
         </SwiperSlide>
       </Swiper>

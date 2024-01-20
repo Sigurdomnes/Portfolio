@@ -1,5 +1,5 @@
-import './Projects.css'
-import './ProjectsLanding.css'
+import './Projects.scss'
+import './ProjectsLanding.scss'
 import landingimg from '../../../img/projectslanding.svg'
 import RoundedBorderButton from '../../Components/RoundedBorderButton/RoundedBorderButton';
 import { useSwiper } from 'swiper/react';
@@ -8,8 +8,11 @@ function ProjectsLanding() {
     const swiper = useSwiper();
     return (
         <div className='projects-fullpage-card projects-landing'>
+            <div className='nextarrow'>About<span className='arrow'></span></div>
+            <div className='nextarrow left'>Home<span className='arrow'></span></div>
             <div className='projects-landing-content'>
-                <img className='landing-img' src={landingimg} />
+                <img className='landing-img' alt='' src={landingimg} />
+                <h1 className='projects-landing-header'>Experience:</h1>
                 <div className='project-landing-skills-card'>
                     <div className='projects-landing-skills skills-css'>CSS</div>
                     <div className='projects-landing-skills skills-js'>JavaScript</div>
@@ -27,8 +30,8 @@ function ProjectsLanding() {
                     width='15rem'
                     height='3rem'
                     onClick={() => { swiper.slideTo(2); }} />
-                <p className='projects-landing-par'>I strive to create dynamic, intuitive and responsive yet unique front-ends
-                    with solid back ends. <br /><br /> See my projects below!</p>
+                <p className='projects-landing-par'>I create dynamic and responsive front-ends with scalable and stable back-ends. Not a designer or content creator.
+                 <br /><br /><span className='projects-landing-strong'>See my projects below!</span></p>
             </div>
         </div>
     )

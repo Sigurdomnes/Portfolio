@@ -29,15 +29,14 @@
         }
     }
 
-    .scroll-blocker {
+    .content-blocker {
         display: grid;
         justify-content: center;
         height: auto;
         width: 100vw;
         padding: 1.5rem 2rem 2rem;
         align-items: center;
-        overflow: hidden;
-        background: #00000080;
+        background: #000000af;
 
         @media screen and (min-width: 600px) {
             padding: 2rem 3rem 3.5rem;
@@ -46,7 +45,7 @@
         .projects-card-content {
             display: grid;
             align-items: center;
-            width: 90vw;
+            width: 88vw;
 
             @media screen and (min-width: 600px) {
                 width: 75vw;
@@ -82,7 +81,7 @@
                 }
             }
 
-            div {
+            .projects-card-lang-container {
 
                 --js: #c0ad00;
                 --css: #611453;
@@ -142,9 +141,9 @@
                     }
 
                     .projects-lang-pct {
-                        margin-left: .25rem;
-                        font-size: .8rem;
-                        color: grey;
+                        margin-left: .3rem;
+                        font-size: .75rem;
+                        color: #888;
                     }
 
                 }

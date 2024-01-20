@@ -1,17 +1,14 @@
-import './Hero.css'
-import '../About/AboutFallingLetters.css'
+import './Hero.scss'
 import avatar from '../../../img/avatar.svg'
 import { useSwiper } from 'swiper/react';
 import RoundedBorderButton from '../../Components/RoundedBorderButton/RoundedBorderButton';
-import DrifterStars from '@devil7softwares/react-drifter-stars'
 import HexagonBackground from '../../Components/HexagonBackground/HexagonBackground';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-function Hero(props) {
+function Hero() {
     const swiper = useSwiper();
     return (
         <div className='hero-wrapper'>
-            <HexagonBackground />
+            <HexagonBackground/>
             <div className='hero-content'>
                 <h1 className='hero-content-center-header'>
                     Sigurd Omnes

@@ -1,7 +1,6 @@
-import './ProjectsCard.css'
-import './Projects.css'
+import './ProjectsCard.scss'
+import './Projects.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { useState } from 'react';
 
 function ProjectsCard({ scrollPosition, ...props }) {
     // Array of prog languages from json object
@@ -9,18 +8,18 @@ function ProjectsCard({ scrollPosition, ...props }) {
     // Parallax effect (catches each id's start position)
     const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
     const id = props.id;
-    let top = ((scrollPosition - vh * (id + 1)) *.1) + 'px';
+    let top = ((scrollPosition - vh * (id + 1)) *.15) + 'px';
 
     return (
         <div className={`projects-fullpage-card projects-card ${props.name === "concept" ? 'concept' : '' || props.name === "portfolio" ? 'portfolio' : ''}`}>
             <div className='projects-card-blocker' />
-            <div className='scroll-blocker'>
+            <div className='content-blocker'>
                 <div style={{ transform: `translateY(${top})` }} className={`projects-card-content ${props.id % 2 === 0 ? 'project-cards-switch' : ''}`}>
                     <h1 className='projects-card-header'>{props.header}</h1>
                     <p className='projects-card-par'>
                         {props.text}
                     </p>
-                    <div>
+                    <div className='projects-card-lang-container'>
                         <div className={`projects-card-lang-pct-bar ${props.name === 'portfolio' ? 'portfolio-pct' : '' || props.name === 'concept' ? 'concept-pct' : ''}`} />
                         {languages.map((language) => (
                             <p key={language.id}

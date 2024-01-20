@@ -1,0 +1,108 @@
+.fullpage-wrapper {
+  height: 100dvh;
+  width: 100%;
+  overflow: hidden;
+  background-color: var(--themecolor);
+  touch-action: none;
+  overscroll-behavior: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* hide scrollbar for chrome, safari and opera */
+.fullpage-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.fullpage-indicator {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: .4rem;
+  width: 100%;
+  background-color: transparent;
+  z-index: 99;
+  --pct: 0;
+  box-shadow: inset var(--pct) 0 0 0 var(--accentcolor);
+  transition: .15s linear;
+}
+
+.scroll-down-arrow {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 3.5rem;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  animation: down 1.5s infinite;
+  -webkit-animation: down 1.5s infinite;
+  z-index: 2;
+  justify-self: center;
+  transition: opacity .2s ease;
+  margin-top: 1rem;
+  margin-bottom: -1rem;
+  cursor: pointer;
+  filter: drop-shadow(0 0 1px #111);
+  border: 2px solid var(--accentcolor);
+
+  @media screen and (min-width: 600px) {
+    bottom: 4rem;
+
+    &:hover:before {
+      border-left: 3px solid var(--accentcolor);
+      border-bottom: 3px solid var(--accentcolor);
+    }
+  }
+
+  &:before {
+    content: '';
+    position: absolute !important;
+    display: block;
+    top: .85rem;
+    left: 2px;
+    right: 2px;
+    margin: 0 auto;
+    width: 13px;
+    height: 13px;
+    border-left: 3px solid var(--light-color);
+    border-bottom: 3px solid var(--light-color);
+    transform: rotate(-45deg);
+    transition: .2s ease;
+  }
+}
+
+@keyframes down {
+  0% {
+    transform: translateY(0);
+  }
+
+  20% {
+    transform: translateY(10px);
+  }
+
+  40% {
+    transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes down {
+  0% {
+    transform: translateY(0);
+  }
+
+  20% {
+    transform: translateY(10px);
+  }
+
+  40% {
+    transform: translateY(0);
+  }
+}

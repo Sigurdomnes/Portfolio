@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@devil7softwares/react-drifter-stars": "^1.0.6",
     "@fortawesome/fontawesome-svg-core": "^6.4.2",
     "@fortawesome/free-brands-svg-icons": "^6.4.2",
     "@fortawesome/free-regular-svg-icons": "^6.4.2",
@@ -12,13 +11,10 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
-    "matter-js": "^0.19.0",
     "react": "^18.2.0",
-    "react-device-detect": "^2.2.3",
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
     "react-scripts": "5.0.1",
-    "react-scroll": "^1.9.0",
     "swiper": "^11.0.4",
     "typewriter-effect": "^2.21.0",
     "web-vitals": "^2.1.4"
@@ -48,6 +44,7 @@
     ]
   },
   "devDependencies": {
-    "tailwindcss": "^3.4.1"
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "sass": "^1.70.0"
   }
 }

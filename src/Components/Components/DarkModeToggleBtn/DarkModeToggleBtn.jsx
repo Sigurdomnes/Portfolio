@@ -1,4 +1,4 @@
-import './DarkModeToggleBtn.css'
+import './DarkModeToggleBtn.scss'
 
 function DarkModeToggleBtn(props) {
 	return (

@@ -1,4 +1,4 @@
-import './ContactForm.css'
+import './ContactForm.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 function ContactForm({ contactForm, setContactForm }) {
