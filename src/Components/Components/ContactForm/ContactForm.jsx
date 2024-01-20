@@ -5,27 +5,27 @@ import { useRef, useState } from 'react';
 
 function ContactForm({ contactForm, setContactForm }) {
     const form = useRef();
-    const [submittedForm, setSubmittedForm] = useState(false);
-    const [formResult, setFormResult] = useState(null);
+    const [formIsSubmitted, setFormIsSubmitted] = useState(false);
+    const [resultMessage, setResultMessage] = useState(null);
     const [count, setCount] = useState(0);
 
     const sendEmail = (e) => {
         e.preventDefault();
-        setSubmittedForm(true);
-        setFormResult(null);
+        setFormIsSubmitted(true);
+        setResultMessage(null);
 
         if (count > 2)
-            setFormResult('The service seems to be down. Email address shown below.')
-        else if (!submittedForm) {
+            setResultMessage('The service seems to be down. Email address shown below.')
+        else if (!formIsSubmitted) {
             emailjs.sendForm('service_ikjlqkf', 'template_zn9b8a9', form.current, 'N5CXGOnYP5lCrPu6m')
                 .then((result) => {
                     console.log(result.text);
                     form.current.reset();
-                    setFormResult("Success! Thanks for your message!");
+                    setResultMessage("Success! Thanks for your message!");
                 }, (error) => {
                     console.log(error.text);
-                    setSubmittedForm(false);
-                    setFormResult('Something went wrong. Try again.')
+                    setFormIsSubmitted(false);
+                    setResultMessage('Something went wrong. Try again.')
                     setCount(count + 1);
                 });
         };
@@ -48,9 +48,9 @@ function ContactForm({ contactForm, setContactForm }) {
                     </div>
                     <input type="text" name="subject" className='contact-form-input subject' placeholder='Subject' required></input>
                     <textarea name="message" className='contact-form-message' placeholder="Your message.." required></textarea>
-                    {!submittedForm && <input type="submit" className='contact-form-submit-btn' value="Send"></input>}
-                    {submittedForm && formResult === null && <span class="loader"></span> }
-                    {formResult !== null && <p className="form-result">{formResult}</p>}
+                    {!formIsSubmitted && <input type="submit" className='contact-form-submit-btn' value="Send"></input>}
+                    {formIsSubmitted && resultMessage === null && <span class="loader"></span> }
+                    {resultMessage !== null && <p className="form-result">{resultMessage}</p>}
                 </form>
                 <span className='contact-form-text'>
                     <p>0178, Oslo</p>
