@@ -30,21 +30,21 @@ function About(props) {
                 <p className='about-par'>Computer Engineering student</p>
                 <div className='about-programming-wrapper'>
                     <div className='about-programming-presentation'>
-                        <p>1 <div className="indent1">public class <b>Student</b> &#123;</div></p>
-                        <p>2 <div className="indent2">(...)</div></p>
-                        <p>3 <div className="indent2"> public Student() &#123;</div></p>
-                        <p>4 <div className="indent3"> name = "<b>Sigurd Omnes</b>";</div></p>
-                        <p>5 <div className="indent3"> address = "<b>Oslo, Norway</b>";</div></p>
-                        <p>6 <div className="indent3"> age = <b>31</b>;</div></p>
-                        <p>7 <div className="indent3"> trade = "<b>Computer Engineering</b>";</div></p>
-                        <p>8 <div className="indent3"> lang = [<b>HTML, CSS, JS, Java, C/C++, SQL</b>];</div></p>
-                        <p>9 <div className="indent3"> tools = [<b>React, Spring Boot, Node.js, Docker</b>];</div></p>
-                        <p>10 <div className="indent22">&#125;</div></p>
-                        <p>11 <div className="indent22">public static void main (String args[]) &#123;</div></p>
-                        <p>12 <div className="indent32">Student sigurd = new Student();</div></p>
-                        <p>13 <div className="indent32"><b>System.out.println(sigurd)</b>;</div></p>
-                        <p>14 <div className="indent22">&#125;</div></p>
-                        <p>15 <div className='indent12'>&#125;</div></p>
+                        <p>1 <span className="indent1">public class <b>Student</b> &#123;</span></p>
+                        <p>2 <span className="indent2">(...)</span></p>
+                        <p>3 <span className="indent2"> public Student() &#123;</span></p>
+                        <p>4 <span className="indent3"> name = "<b>Sigurd Omnes</b>";</span></p>
+                        <p>5 <span className="indent3"> address = "<b>Oslo, Norway</b>";</span></p>
+                        <p>6 <span className="indent3"> age = <b>31</b>;</span></p>
+                        <p>7 <span className="indent3"> trade = "<b>Computer Engineering</b>";</span></p>
+                        <p>8 <span className="indent3"> lang = [<b>HTML, CSS, JS, Java, C/C++, SQL</b>];</span></p>
+                        <p>9 <span className="indent3"> tools = [<b>React, Spring Boot, Node.js, Docker</b>];</span></p>
+                        <p>10 <span className="indent22">&#125;</span></p>
+                        <p>11 <span className="indent22">public static void main (String args[]) &#123;</span></p>
+                        <p>12 <span className="indent32">Student sigurd = new Student();</span></p>
+                        <p>13 <span className="indent32"><b>System.out.println(sigurd)</b>;</span></p>
+                        <p>14 <span className="indent22">&#125;</span></p>
+                        <p>15 <span className='indent12'>&#125;</span></p>
                     </div>
                     <img className='meg-img' src={meg} alt=''></img>
                     <div className='about-programming-ide-presentation'>
