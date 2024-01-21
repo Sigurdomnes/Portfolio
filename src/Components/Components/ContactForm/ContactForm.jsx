@@ -29,7 +29,8 @@ function ContactForm({ contactForm, setContactForm }) {
                     setCount(count + 1);
                 });
         };
-    };    return (
+    };
+    return (
         <div className={`contact-form-wrapper ${contactForm ? "active" : "inactive"}`}>
             <div className='contact-form-blocker' onClick={() => { setContactForm(false) }}></div>
             <div className='contact-form-container'>
@@ -49,7 +50,7 @@ function ContactForm({ contactForm, setContactForm }) {
                     <input type="text" name="subject" className='contact-form-input subject' placeholder='Subject' required></input>
                     <textarea name="message" className='contact-form-message' placeholder="Your message.." required></textarea>
                     {!formIsSubmitted && <input type="submit" className='contact-form-submit-btn' value="Send"></input>}
-                    {formIsSubmitted && resultMessage === null && <span class="loader"></span> }
+                    {formIsSubmitted && resultMessage === null && <span class="loader"></span>}
                     {resultMessage !== null && <p className="form-result">{resultMessage}</p>}
                 </form>
                 <span className='contact-form-text'>

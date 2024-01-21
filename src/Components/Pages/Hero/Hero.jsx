@@ -13,11 +13,8 @@ function Hero() {
                 <h1 className='hero-content-center-header'>
                     Sigurd Omnes
                 </h1>
-                <br /><br />
                 <img className='img' src={avatar} alt={'Person'} />
-                <br /> <br />
                 <p className='hero-content-center-par'>Computer engineer / Full stack developer</p>
-                <br /> <br />
                 <RoundedBorderButton
                     text="Projects"
                     arrow={true}
