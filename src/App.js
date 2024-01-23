@@ -1,4 +1,4 @@
-import './App.css';
+import './App.css'
 import Hero from './Components/Pages/Hero/Hero'
 import NavBar from './Components/Pages/NavBar/NavBar'
 import Socials from './Components/Components/Socials/Socials'
@@ -15,54 +15,55 @@ import { useState } from 'react';
 import ConctactForm from './Components/Components/ContactForm/ContactForm';
 import Projects from './Components/Pages/Projects/Projects';
 import { Helmet } from 'react-helmet';
+import Timeline from './Components/Pages/About/Timeline/Timeline';
 
 function App() {
-  const [index, setIndex] = useState(0);
-  const [contactForm, setContactForm] = useState(false);
-  const [typeWriter, setTypewriter] = useState(false);
-  const [navMenu, setNavMenu] = useState(false);
-  const [slideZoom, setSlideZoom] = useState(false);
+  const [contactFormIsActive, setContactFormIsActive] = useState(false);
+  const [navMenuIsActive, setNavMenuIsActive] = useState(false);
+  const [typeWriterIsStarted, setTypeWriterIsStarted] = useState(false);
   const [darkMode, setDarkMode] = useState(true);
-  const onTransitionStart = () => {
-    setSlideZoom(true);
+  const [cubeIndex, setCubeIndex] = useState(0);
+  const [cubeZoom, setCubeZoom] = useState(false);
+  const onCubeTransitionStart = () => {
+    setCubeZoom(true);
   };
-  const onTransitionEnd = () => {
+  const onCubeTransitionEnd = () => {
     setTimeout(() => {
-      setSlideZoom(false);
+      setCubeZoom(false);
     }, 350);
   }
   return (
     <div className='App'>
-      {index === 0 &&
+      {cubeIndex === 0 &&
         <Helmet>
           <title>Sigurd Omnes</title>
           <meta name="Sigurd Omnes" content="Home" />
         </Helmet>}
-      {index === 1 &&
+      {cubeIndex === 1 &&
         <Helmet>
           <title>Sigurd Omnes - Projects</title>
           <meta name="Sigurd Omnes" content="Projects" />
         </Helmet>}
-        {index === 2 &&
+        {cubeIndex === 2 &&
         <Helmet>
           <title>Sigurd Omnes - About</title>k
           <meta name="Sigurd Omnes" content="About" />
         </Helmet>}
       <Socials
-        show={index === 0}
+        show={cubeIndex === 0}
       />
       <ConctactForm
-        setContactForm={setContactForm}
-        contactForm={contactForm} />
+        setContactFormIsActive={setContactFormIsActive}
+        contactFormIsActive={contactFormIsActive} />
       <Swiper
         effect={'cube'}
         grabCursor={false}
         speed={1300}
         onSlideChange={
-          (e) => { setIndex(e.realIndex); if (e.realIndex === 2) { setTypewriter(true) }; }
+          (e) => { setCubeIndex(e.realIndex); if (e.realIndex === 2) { setTypeWriterIsStarted(true) }; }
         }
-        onTransitionStart={onTransitionStart}
-        onTransitionEnd={onTransitionEnd}
+        onTransitionStart={onCubeTransitionStart}
+        onTransitionEnd={onCubeTransitionEnd}
         allowTouchMove={false}
         keyboard={{
           enabled: true,
@@ -74,68 +75,71 @@ function App() {
           shadowScale: 0.3
         }}
         modules={[EffectCube]}
-        className={slideZoom ? 'zoom' : ''}
+        className={cubeZoom ? 'zoom' : ''}
       >
+{/*          <SwiperSlide>
+          <Timeline/>
+        </SwiperSlide>  */}
         <SwiperSlide>
           <NavBar
-            setContactForm={setContactForm}
+            setContactFormIsActive={setContactFormIsActive}
             darkMode={darkMode}
             setDarkMode={setDarkMode}
             bgColor='transparent'
             activeLink={1}
             border='none'
-            navMenu={navMenu}
-            setNavMenu={setNavMenu}
+            navMenuIsActive={navMenuIsActive}
+            setNavMenuIsActive={setNavMenuIsActive}
           />
           <Hero
-            show={index === 0}
+            show={cubeIndex === 0}
           />
         </SwiperSlide>
         <SwiperSlide>
           <NavBar
             header='Projects'
-            setContactForm={setContactForm}
+            setContactFormIsActive={setContactFormIsActive}
             darkMode={darkMode}
             setDarkMode={setDarkMode}
             button={true}
             activeLink={2}
             btnText='About'
             btnArrow={true}
-            navMenu={navMenu}
-            setNavMenu={setNavMenu}
+            navMenuIsActive={navMenuIsActive}
+            setNavMenuIsActive={setNavMenuIsActive}
             hide={true}
           />
           <Projects />
         </SwiperSlide>
         {/* <SwiperSlide>
           <NavBar
-            setContactForm={setContactForm}
+            setContactFormIsActive={setContactFormIsActive}
             darkMode={darkMode}
             setDarkMode={setDarkMode}
             button={true}
             activeLink={2}
             btnText='About'
             btnArrow={true}
-            navMenu={navMenu}
-            setNavMenu={setNavMenu}
+            navMenuIsActive={navMenuIsActive}
+            setNavMenuIsActive={setNavMenuIsActive}
           />
           <Portfolio />
       </SwiperSlide> */}
         <SwiperSlide>
           <NavBar
             header='About'
-            setContactForm={setContactForm}
+            setContactFormIsActive={setContactFormIsActive}
             darkMode={darkMode}
             setDarkMode={setDarkMode}
             button={true}
             activeLink={3}
             btnText='Get my resumé'
             btnDownload={true}
-            navMenu={navMenu}
-            setNavMenu={setNavMenu}
+            navMenuIsActive={navMenuIsActive}
+            setNavMenuIsActive={setNavMenuIsActive}
           />
           <About
-            index={typeWriter}
+            typeWriterIsStarted={typeWriterIsStarted}
           />
         </SwiperSlide>
       </Swiper>

@@ -1,5 +1,5 @@
 .App {
-  min-height: 100dvh;
+  height: 100dvh;
   overflow: hidden;
   background: #444;
   background-repeat: no-repeat;

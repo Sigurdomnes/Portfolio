@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import emailjs from '@emailjs/browser';
 import { useRef, useState } from 'react';
 
-function ContactForm({ contactForm, setContactForm }) {
+function ContactForm({ contactFormIsActive, setContactFormIsActive }) {
     const form = useRef();
     const [formIsSubmitted, setFormIsSubmitted] = useState(false);
     const [resultMessage, setResultMessage] = useState(null);
@@ -31,10 +31,10 @@ function ContactForm({ contactForm, setContactForm }) {
         };
     };
     return (
-        <div className={`contact-form-wrapper ${contactForm ? "active" : "inactive"}`}>
-            <div className='contact-form-blocker' onClick={() => { setContactForm(false) }}></div>
+        <div className={`contact-form-wrapper ${contactFormIsActive ? "active" : "inactive"}`}>
+            <div className='contact-form-blocker' onClick={() => { setContactFormIsActive(false) }}></div>
             <div className='contact-form-container'>
-                <button className='contact-form-btn-close' onClick={() => { setContactForm(false) }}>
+                <button className='contact-form-btn-close' onClick={() => { setContactFormIsActive(false) }}>
                     <FontAwesomeIcon icon="fas fa-times" />
                 </button>
                 <h1 className='contact-form-header'>Contact me</h1>

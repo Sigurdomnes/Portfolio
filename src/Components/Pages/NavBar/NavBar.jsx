@@ -6,19 +6,15 @@ import useClickOutside from '../../Hooks/useClickOutside';
 import { useEffect, useState } from 'react';
 import DarkModeToggleBtn from '../../Components/DarkModeToggleBtn/DarkModeToggleBtn';
 
-const NavBar = ({ setContactForm, navMenu, setNavMenu, darkMode, setDarkMode, index, ...props }) => {
-    const { clickOutsideRef } = useClickOutside(setNavMenu);
+const NavBar = ({ setContactFormIsActive, navMenuIsActive, setNavMenuIsActive, darkMode, setDarkMode, index, ...props }) => {
+    const { clickOutsideRef } = useClickOutside(setNavMenuIsActive);
     const onClickContactLink = () => {
-        setContactForm(true);
+        setContactFormIsActive(true);
     }
-    const [toggle, setToggle] = useState(navMenu)
-    useEffect(() => setToggle(navMenu), [navMenu])
+    const [toggle, setToggle] = useState(navMenuIsActive)
+    useEffect(() => setToggle(navMenuIsActive), [navMenuIsActive])
     const onClickMenu = () => {
-        if (!toggle) {
-            setNavMenu(true);
-        } else {
-            setNavMenu(false);
-        }
+            setNavMenuIsActive(!toggle);
     }
     const toggleDarkMode = () => {
         if (darkMode) {
@@ -40,19 +36,19 @@ const NavBar = ({ setContactForm, navMenu, setNavMenu, darkMode, setDarkMode, in
         <nav className='navbar-wrapper' style={{ '--color': props.color, '--hover-bg-color': props.hoverBgColor, '--hover-color': props.hoverColor }}>
             <div className={`navbar-content ${props.hide ? 'hide' : ''}`} style={{ backgroundColor: props.bgColor, border: props.border }}>
                 <div className='mobile-top-wrapper'>
-                    <div className={`navbar-logo  ${props.activeLink !== 1 ? 'navbar-logo-mobile' : ''}`} onClick={() => { swiper.slideTo(0); setNavMenu(false); }}>S</div>
+                    <div className={`navbar-logo  ${props.activeLink !== 1 ? 'navbar-logo-mobile' : ''}`} onClick={() => { swiper.slideTo(0); setNavMenuIsActive(false); }}>S</div>
                     <h1 className='navbar-header'>{props.header}</h1>
                     {props.activeLink === 1 && <DarkModeToggleBtn className='dark-mode-toggle-btn' onClick={toggleDarkMode} checked={darkMode} />}
                 </div>
                 <div className='navmenu-wrapper'>
-                    <ul ref={clickOutsideRef} className={`navmenu-links-container ${navMenu ? "active" : "inactive"}`} onClick={() => { setNavMenu(false); setToggle(false); }} >
-                        <li className={`navmenu-links  ${props.activeLink === 1 ? "active" : ""}`} onClick={() => { swiper.slideTo(0); setNavMenu(false); }}><FontAwesomeIcon className='icon' icon="fa-solid fa-house-chimney-user" />Home</li>
-                        <li className={`navmenu-links  ${props.activeLink === 2 ? "active" : ""}`} onClick={() => { swiper.slideTo(1); setNavMenu(false); }}><FontAwesomeIcon className='icon' icon="fa-solid fa-briefcase" />Projects</li>
-                        <li className={`navmenu-links  ${props.activeLink === 3 ? "active" : ""}`} onClick={() => { swiper.slideTo(2); setNavMenu(false); }}><FontAwesomeIcon className='icon' icon="fa-solid fa-address-card" />About</li>
+                    <ul ref={clickOutsideRef} className={`navmenu-links-container ${navMenuIsActive ? "active" : "inactive"}`} onClick={() => { setNavMenuIsActive(false); setToggle(false); }} >
+                        <li className={`navmenu-links  ${props.activeLink === 1 ? "active" : ""}`} onClick={() => { swiper.slideTo(0); setNavMenuIsActive(false); }}><FontAwesomeIcon className='icon' icon="fa-solid fa-house-chimney-user" />Home</li>
+                        <li className={`navmenu-links  ${props.activeLink === 2 ? "active" : ""}`} onClick={() => { swiper.slideTo(1); setNavMenuIsActive(false); }}><FontAwesomeIcon className='icon' icon="fa-solid fa-briefcase" />Projects</li>
+                        <li className={`navmenu-links  ${props.activeLink === 3 ? "active" : ""}`} onClick={() => { swiper.slideTo(2); setNavMenuIsActive(false); }}><FontAwesomeIcon className='icon' icon="fa-solid fa-address-card" />About</li>
                         <li className='navmenu-links navmenu-contact-link-mobile' onClick={() => { onClickContactLink(); }} ><FontAwesomeIcon className='icon' icon="fa-solid fa-address-book" />Contact</li>
                         <li className='navmenu-contact-link' onClick={onClickContactLink}>Hit me up</li>
                     </ul>
-                    <button className={`navmenu-btn collapse-btn ${navMenu ? "opened" : ""}`} onClick={onClickMenu}>
+                    <button className={`navmenu-btn collapse-btn ${navMenuIsActive ? "opened" : ""}`} onClick={onClickMenu}>
                         <svg width="100" height="100" viewBox="0 0 100 100">
                             <path className="line line1" d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058" />
                             <path className="line line2" d="M 20,50 H 80" />
@@ -67,7 +63,7 @@ const NavBar = ({ setContactForm, navMenu, setNavMenu, darkMode, setDarkMode, in
                             arrow={props.btnArrow}
                             download={props.btnDownload}
                             height='3.5rem'
-                            onClick={() => { swiper.slideTo(2); setNavMenu(false); }} />}
+                            onClick={() => { swiper.slideTo(2); setNavMenuIsActive(false); }} />}
                     <div className='nextarrow'>About<span className='arrow'></span></div>
                     <div className='nextarrow left'>Home<span className='arrow'></span></div>
                 </div>

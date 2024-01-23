@@ -1,15 +1,15 @@
 import { useCallback, useEffect, useRef } from 'react';
 
-export default function useClickOutside(toggle) {
+export default function useClickOutside(elementIsActive) {
     const clickOutsideRef = useRef(null);
 
     const handleClickOutside = useCallback((event) => {
         if (clickOutsideRef.current && !clickOutsideRef.current.contains(event.target)) {
-            toggle(false);
+            elementIsActive(false);
         } else {
-            toggle(true);
+            elementIsActive(true);
         }
-    }, [toggle]);
+    }, [elementIsActive]);
 
     useEffect(() => {
         document.addEventListener('click', handleClickOutside, true);

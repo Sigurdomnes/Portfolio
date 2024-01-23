@@ -48,7 +48,7 @@ function About(props) {
                     </div>
                     <img className='meg-img' src={meg} alt=''></img>
                     <div className='about-programming-ide-presentation'>
-                        {props.index &&
+                        {props.typeWriterIsStarted &&
                             <Typewriter
                                 onInit={(typewriter) => {
                                     typewriter.pauseFor(800)
