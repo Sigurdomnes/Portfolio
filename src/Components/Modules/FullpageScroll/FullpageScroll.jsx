@@ -1,12 +1,12 @@
 //
-// Fullpage React module
+// Fullpage Scroll React module
 // Written by Sigurd Omnes
 //
 
-import "./Fullpage.scss";
-import React, { useState, useRef, useEffect } from "react";
+import "./FullpageScroll.scss";
+import { useState, useRef, useEffect } from "react";
 
-function Fullpage({ fullpageSlideIndex, setFullpageSlideIndex, fullpageScrollPosition, setFullpageScrollPosition, ...props }) {
+function Fullpage({ children, fullpageSlideIndex, setFullpageSlideIndex, fullpageScrollPosition, setFullpageScrollPosition }) {
 
   //Can be elevated for access - uncomment to use locally:
 
@@ -18,12 +18,12 @@ function Fullpage({ fullpageSlideIndex, setFullpageSlideIndex, fullpageScrollPos
 
   // Number of total fullpage slides
   const [numberOfSlides, setNumberOfSlides] = useState(0);
-
   // Set on page load
   useEffect(() => {
     setNumberOfSlides(wrapperRef.current.children.length);
   }, [])
 
+  // Full page wrapper (contains all slides)
   const wrapperRef = useRef(null);
 
   // Global slide to next function
@@ -43,24 +43,27 @@ function Fullpage({ fullpageSlideIndex, setFullpageSlideIndex, fullpageScrollPos
     }
   };
 
-  // Desktop mouse wheel trigger function
+  // Set mouse wheel distance to trigger scroll
+  const minScrollDistance = 5;
+
+  // Mouse wheel trigger function
   const handleScroll = (e) => {
-    if (e.deltaY > 5) {
+    if (e.deltaY > minScrollDistance) {
       scrollToNext();
-    } else if (e.deltaY < -5) {
+    } else if (e.deltaY < -minScrollDistance) {
       scrollToPrev();
     }
   };
 
-  // Mobile swiper functions
+  // Set mobile swipe distance to trigger scroll
+  const minSwipeDistance = 10;
+
+  // Touch start / end states
   const [touchStart, setTouchStart] = useState(null)
   const [touchEnd, setTouchEnd] = useState(null)
 
-  // Set swipe distance to be considered a swipe
-  const minSwipeDistance = 10;
-
   const onTouchStart = (e) => {
-    setTouchEnd(null) // Otherwise the swipe is fired even with usual touch events
+    setTouchEnd(null) // Reset to prevent scroll fired on touch start
     setTouchStart(e.targetTouches[0].clientY)
   }
 
@@ -68,7 +71,7 @@ function Fullpage({ fullpageSlideIndex, setFullpageSlideIndex, fullpageScrollPos
     setTouchEnd(e.targetTouches[0].clientY)
   }
 
-  // Mobile swipe end trigger function
+  // Touch end trigger function
   const onTouchEnd = () => {
     if (!touchStart || !touchEnd) return
     const distance = touchStart - touchEnd
@@ -86,11 +89,11 @@ function Fullpage({ fullpageSlideIndex, setFullpageSlideIndex, fullpageScrollPos
     setFullpageScrollPosition(e.target.scrollTop);
     const top = wrapperRef.current.offsetHeight;
     const index = Math.round(fullpageScrollPosition / top)
-    // Sets index to nearest page of current scroll position
+    // Sets index to nearest full page of current scroll position
     setFullpageSlideIndex(index);
   }
 
-  // Ratio for page indicator
+  // Percent value for page indicator
   let pct = ((100 / (numberOfSlides - 1)) * fullpageSlideIndex) + 'vw';
 
   return (
@@ -102,7 +105,7 @@ function Fullpage({ fullpageSlideIndex, setFullpageSlideIndex, fullpageScrollPos
         onTouchEnd={onTouchEnd}
         onScroll={(e) => { onScrollCatchPosition(e); }}>
         {/* Children elements' height must be dhv to work correctly on mobile */}
-        {props.children}
+        {children}
       </div>
       <div className="fullpage-indicator" style={{ '--pct': pct }} />
       <div className='scroll-down-arrow' style={{ opacity: fullpageScrollPosition < 1 ? '1' : '0' }} onClick={scrollToNext} />

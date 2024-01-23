@@ -1,4 +1,4 @@
-import Fullpage from '../../Modules/Fullpage/Fullpage'
+import Fullpage from '../../Modules/FullpageScroll/FullpageScroll'
 import './Projects.scss'
 import { useState } from 'react';
 import ProjectsLanding from './ProjectsLanding';

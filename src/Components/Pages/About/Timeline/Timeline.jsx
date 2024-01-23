@@ -1,4 +1,4 @@
-import FadeIn from '../../../Modules/FadeIn/FadeIn'
+import IntoViewEffect from '../../../Modules/IntoViewEffect/IntoViewEffect'
 import './Timeline.scss'
 
 function Timeline() {
@@ -6,9 +6,14 @@ function Timeline() {
   return (
     <div className='timeline-wrapper'>
         <div className="timeline-content">
-            <FadeIn>
-                <div className="">Show me!</div>
-            </FadeIn>
+
+
+
+
+
+            <IntoViewEffect 
+            effect='fade-in'>  
+            </IntoViewEffect>
         </div>
     </div>
   )

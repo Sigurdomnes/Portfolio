@@ -11,6 +11,7 @@ const NavBar = ({ setContactFormIsActive, navMenuIsActive, setNavMenuIsActive, d
     const onClickContactLink = () => {
         setContactFormIsActive(true);
     }
+    // Fix later
     const [toggle, setToggle] = useState(navMenuIsActive)
     useEffect(() => setToggle(navMenuIsActive), [navMenuIsActive])
     const onClickMenu = () => {

@@ -1,12 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 
-export function useIsVisible() {
+export function useIsInView() {
     const isVisibleRef = useRef();
-    const [isVisible, setIsVisible] = useState(false);
+    const [isInView, setIsInView] = useState(false);
 
     useEffect(() => {
         const observer = new IntersectionObserver(([entry]) =>
-            setIsVisible(entry.isIntersecting)
+            setIsInView(entry.isIntersecting)
         );
 
         observer.observe(isVisibleRef.current);
@@ -15,5 +15,5 @@ export function useIsVisible() {
         };
     }, [isVisibleRef]);
 
-     return { isVisibleRef, isVisible } 
+     return { isVisibleRef, isInView } 
 }

@@ -11,10 +11,9 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/effect-cube';
 import { EffectCube } from 'swiper/modules';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import ConctactForm from './Components/Components/ContactForm/ContactForm';
 import Projects from './Components/Pages/Projects/Projects';
-import { Helmet } from 'react-helmet';
 import Timeline from './Components/Pages/About/Timeline/Timeline';
 
 function App() {
@@ -23,8 +22,10 @@ function App() {
   const [typeWriterIsStarted, setTypeWriterIsStarted] = useState(false);
   const [darkMode, setDarkMode] = useState(true);
   const [cubeIndex, setCubeIndex] = useState(0);
+    // Jump effect on cube transition
   const [cubeZoom, setCubeZoom] = useState(false);
   const onCubeTransitionStart = () => {
+    // Sets className on Swiper
     setCubeZoom(true);
   };
   const onCubeTransitionEnd = () => {
@@ -32,23 +33,14 @@ function App() {
       setCubeZoom(false);
     }, 350);
   }
+  // Set document title based on cube index
+  useEffect(() => {
+    if (cubeIndex === 2) document.title = 'Sigurd Omnes - About'
+    else if (cubeIndex === 1) document.title = 'Sigurd Omnes - Projects'
+    else document.title = 'Sigurd Omnes'
+  }, [cubeIndex])
   return (
     <div className='App'>
-      {cubeIndex === 0 &&
-        <Helmet>
-          <title>Sigurd Omnes</title>
-          <meta name="Sigurd Omnes" content="Home" />
-        </Helmet>}
-      {cubeIndex === 1 &&
-        <Helmet>
-          <title>Sigurd Omnes - Projects</title>
-          <meta name="Sigurd Omnes" content="Projects" />
-        </Helmet>}
-        {cubeIndex === 2 &&
-        <Helmet>
-          <title>Sigurd Omnes - About</title>k
-          <meta name="Sigurd Omnes" content="About" />
-        </Helmet>}
       <Socials
         show={cubeIndex === 0}
       />
@@ -77,9 +69,9 @@ function App() {
         modules={[EffectCube]}
         className={cubeZoom ? 'zoom' : ''}
       >
-{/*          <SwiperSlide>
-          <Timeline/>
-        </SwiperSlide>  */}
+{/*         <SwiperSlide>
+          <Timeline />
+        </SwiperSlide> */}
         <SwiperSlide>
           <NavBar
             setContactFormIsActive={setContactFormIsActive}
