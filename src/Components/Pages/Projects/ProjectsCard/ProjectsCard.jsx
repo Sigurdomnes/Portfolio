@@ -1,5 +1,5 @@
 import './ProjectsCard.scss'
-import './Projects.scss'
+import '../Projects.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 function ProjectsCard({ scrollPosition, ...props }) {

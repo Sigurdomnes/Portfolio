@@ -6,7 +6,8 @@ export function useIsInView() {
 
     useEffect(() => {
         const observer = new IntersectionObserver(([entry]) =>
-            setIsInView(entry.isIntersecting)
+            setIsInView(entry.isIntersecting),
+            {rootMargin: "-150px"}
         );
 
         observer.observe(isVisibleRef.current);

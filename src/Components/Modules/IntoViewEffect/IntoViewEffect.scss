@@ -1,5 +1,5 @@
 .fade-in {
-    transition: 1s ease;
+    transition: 5s ease;
 
     &.hidden {
         opacity: 0;
@@ -9,4 +9,18 @@
         opacity: 1;
     }
 
+}
+
+.slide-in-bottom {
+    transition: transform 1s ease, opacity 2s ease;
+
+    &.hidden {
+        opacity: 0;
+        transform: translateY(5rem);
+    }
+
+    &.visible {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }

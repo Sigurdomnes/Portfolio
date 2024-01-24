@@ -14,7 +14,6 @@ import { EffectCube } from 'swiper/modules';
 import { useEffect, useState } from 'react';
 import ConctactForm from './Components/Components/ContactForm/ContactForm';
 import Projects from './Components/Pages/Projects/Projects';
-import Timeline from './Components/Pages/About/Timeline/Timeline';
 
 function App() {
   const [contactFormIsActive, setContactFormIsActive] = useState(false);
@@ -22,7 +21,7 @@ function App() {
   const [typeWriterIsStarted, setTypeWriterIsStarted] = useState(false);
   const [darkMode, setDarkMode] = useState(true);
   const [cubeIndex, setCubeIndex] = useState(0);
-    // Jump effect on cube transition
+  // Jump effect on cube transition
   const [cubeZoom, setCubeZoom] = useState(false);
   const onCubeTransitionStart = () => {
     // Sets className on Swiper
@@ -69,9 +68,6 @@ function App() {
         modules={[EffectCube]}
         className={cubeZoom ? 'zoom' : ''}
       >
-{/*         <SwiperSlide>
-          <Timeline />
-        </SwiperSlide> */}
         <SwiperSlide>
           <NavBar
             setContactFormIsActive={setContactFormIsActive}

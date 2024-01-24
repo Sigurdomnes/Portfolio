@@ -1,0 +1,80 @@
+{
+    "timeline_cards": [
+        {
+            "id": 0,
+            "class": "grade-school",
+            "title": "High School",
+            "yearspan": "2008 - 2010",
+            "header": "Meløy VGS avd. Glomfjord",
+            "bulletpoints": [
+                {
+                    "id": 1,
+                    "year": "2010",
+                    "descr": "Apprenticeship Chemical Processing"
+                },
+                {
+                    "id": 0,
+                    "year": "2008",
+                    "descr": "Chemical Processing / Technical and Industrial Production"
+                }
+            ]
+        },
+        {
+            "id": 1,
+            "class": "school",
+            "title": "Technician",
+            "yearspan": "2010 - 2021",
+            "header": "Yara // Alere Technologies Oslo // Orkla CS",
+            "bulletpoints": [
+                {
+                    "id": 2,
+                    "year": "2018",
+                    "descr": "Chief Production Operator"
+                },
+                {
+                    "id": 1,
+                    "year": "2014",
+                    "descr": "Automation Technician"
+                },
+                {
+                    "id": 0,
+                    "year": "2010",
+                    "descr": "Process Technician"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "class": "work",
+            "title": "University",
+            "yearspan": "2021 - 2025",
+            "header": "Oslo Metropolitan University",
+            "bulletpoints": [
+                {
+                    "id": 1,
+                    "year": "2022",
+                    "descr": "Computer Engineering (B.Sc.)"
+                },
+                {
+                    "id": 0,
+                    "year": "2021",
+                    "descr": "Forkurs Ingeniør"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "class": "graduate",
+            "title": "Developer",
+            "yearspan": "2025 - ",
+            "header": "Your Company (?)",
+            "bulletpoints": [
+                {
+                    "id": 0,
+                    "year": "2025",
+                    "descr": "Computer Engineer / Full Stack Developer"
+                }
+            ]
+        }
+    ]
+}

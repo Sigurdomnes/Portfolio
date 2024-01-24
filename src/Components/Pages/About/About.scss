@@ -1,13 +1,13 @@
 .about-wrapper {
-    display: flex;
-    flex-direction: column;
+    display: grid;
     justify-content: center;
-    align-items: center;
     height: 100dvh;
     width: 100%;
     color: var(--light-color);
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-Y: scroll;
     background-color: var(--themecolor);
+    padding-bottom: 10rem;
 
     @media screen and (max-width: 600px) {
         justify-content: start;
@@ -59,8 +59,9 @@
 
     .about-content {
         width: 90vw;
-        height: fit-content;
-        display: grid;
+        height: 80vh;
+        display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
         margin: 0 0 3rem;

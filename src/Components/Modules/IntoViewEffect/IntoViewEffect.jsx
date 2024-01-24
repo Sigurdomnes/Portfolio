@@ -11,12 +11,10 @@ import './IntoViewEffect.scss'
 function IntoViewEffect({ children, effect }) {
   const { isVisibleRef, isInView } = useIsInView();
   return (
-    <div>
-      <div ref={isVisibleRef} className={`${effect} ${isInView ? 'visible' : 'hidden'}`}>
+      <div aria-hidden={true} ref={isVisibleRef} className={`${effect} ${isInView ? 'visible' : 'hidden'}`}>
         {children}
       </div>
-    </div>
   )
 }
 
-export default IntoViewEffect
+export default IntoViewEffect;

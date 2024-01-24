@@ -1,21 +1,142 @@
-.timeline-wrapper {
-    background-color: #333;
-    height: 100dvh;
+.timeline {
+    background-color: var(--themecolor);
+    height: fit-content;
     width: 100%;
-    overflow-y: scroll;
     display: grid;
     justify-content: center;
+    color: var(--dark-color);
 
-    .timeline-content {
-        min-height: 50vh;
+    --event-width: 55vw;
+    --circle-color: cyan;
+
+    &-content {
+        height: fit-content;
         width: 75vw;
-        display: grid;
-        align-items: end;
-        justify-content: center;
-        color: white;
-        border: 1px solid white;
-        .div2 {
-            margin-bottom: 20rem;
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        align-self: center;
+
+        .timeline-event {
+            display: flex;
+            justify-content: start;
+            height: 12rem;
+            width: var(--event-width);
+            margin-bottom: 2rem;
+
+            &-card {
+                height: 10rem;
+                width: calc(var(--event-width) - 15rem);
+                background-color: #ddd;
+                z-index: 2;
+                display: flex;
+                flex-direction: row-reverse;
+                border-radius: 1rem;
+                margin-left: 7rem;
+
+                &-title {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    height: 100%;
+                    width: 17.5rem;
+                    background-color: #222;
+                    color: var(--light-color);
+                    line-height: 2rem;
+                    border-radius: 1rem;
+                    margin: 0 -.2rem;
+                }
+
+                &-content {
+                    width: 75%;
+                    padding: 1.5rem 2rem;
+                }
+            }
+
+            &-circle {
+                position: sticky;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-top: 3rem;
+                height: 8rem;
+                width: 8rem;
+                background-color: var(--circle-color);
+                border-radius: 50%;
+
+                &-icon {
+                    position: absolute;
+                    height: 60%;
+                    color: #222
+                }
+
+                &:before {
+                    content: '';
+                    position: absolute;
+                    top: calc(50% - .1rem);
+                    left: -90%;
+                    width: 8rem;
+                    height: .2rem;
+                    background-color: var(--circle-color);
+                }
+
+                &:after {
+                    content: '';
+                    position: absolute;
+                    top: 90%;
+                    left: calc(50% - .2rem);
+                    width: .25rem;
+                    height: 3.8rem;
+                    background-color: var(--circle-color);
+                }
+
+                h2 {
+                    z-index: 2;
+                    font-size: 2rem;
+                }
+            }
+
+            // nth-child adjustments
+
+            &.start .timeline-event-circle:after {
+                display: none;
+
+            }
+
+            &.even {
+                margin-left: 5rem;
+                justify-content: end;
+                --circle-color: chartreuse;
+
+                .timeline-event {
+
+                    &-circle {
+                        &:before {
+                            left: unset;
+                            right: -100%;
+                        }
+                    }
+
+                    &-card {
+                        &-content {}
+                    }
+                }
+            }
+
+            &.odd {
+                margin-right: 5rem;
+                flex-direction: row-reverse;
+
+                .timeline-event {
+
+                    &-card {
+                        flex-direction: row;
+                        margin-left: 0;
+                        margin-right: 7rem;
+                    }
+                }
+            }
         }
     }
 }
