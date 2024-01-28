@@ -1,7 +1,7 @@
 @font-face {
   font-family: "BebasNeue";
   src: local("BebasNeue-Regular"),
-    url("./fonts/BebasNeue-Regular.ttf") format("truetype");
+    url("./fonts/BebasNeue-Regular.ttf") format("woff");
 }
 
 @font-face {
@@ -39,6 +39,13 @@
   font-family: "JetBrainsMono";
   src: local("JetBrainsMono"),
     url("./fonts/JetBrainsMono-2.304/fonts/ttf/JetBrainsMonoNL-Regular.ttf")
+      format("truetype");
+}
+
+@font-face {
+  font-family: "Raleway";
+  src: local("Raleway"),
+    url("./fonts/Raleway/Raleway-VariableFont_wght.ttf")
       format("truetype");
 }
 

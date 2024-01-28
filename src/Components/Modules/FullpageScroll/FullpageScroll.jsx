@@ -6,7 +6,7 @@
 import "./FullpageScroll.scss";
 import { useState, useRef, useEffect } from "react";
 
-function Fullpage({ children, fullpageSlideIndex, setFullpageSlideIndex, fullpageScrollPosition, setFullpageScrollPosition }) {
+function FullpageScroll({ children, fullpageSlideIndex, setFullpageSlideIndex, fullpageScrollPosition, setFullpageScrollPosition }) {
 
   //Can be elevated for access - uncomment to use locally:
 
@@ -113,4 +113,4 @@ function Fullpage({ children, fullpageSlideIndex, setFullpageSlideIndex, fullpag
   );
 }
 
-export default Fullpage;
+export default FullpageScroll;

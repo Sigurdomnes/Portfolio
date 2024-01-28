@@ -1,26 +1,27 @@
 .fade-in {
-    transition: 5s ease;
+    transition: 1.5s ease;
 
-    &.hidden {
+    &.not-in-view {
         opacity: 0;
     }
 
-    &.visible {
+    &.is-in-view {
         opacity: 1;
     }
 
 }
 
 .slide-in-bottom {
-    transition: transform 1s ease, opacity 2s ease;
 
-    &.hidden {
+    &.not-in-view {
         opacity: 0;
-        transform: translateY(5rem);
+        transform: translateY(10rem);
+        transition: .2s ease;
     }
 
-    &.visible {
+    &.is-in-view {
         opacity: 1;
-        transform: translateX(0);
+        transform: translateY(0);
+        transition: transform .4s ease, opacity .2s linear;
     }
 }

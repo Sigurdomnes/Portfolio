@@ -1,30 +1,30 @@
 {
-    "timeline_cards": [
+    "timelineCards": [
         {
             "id": 0,
-            "class": "grade-school",
-            "title": "High School",
-            "yearspan": "2008 - 2010",
-            "header": "Meløy VGS avd. Glomfjord",
+            "title_descr": "Trade School (2008 - 2010)",
+            "start_year": "2008",
+            "icon": "fa-solid fa-book",
+            "bulletpoints_header": "Meløy VGS avd. Glomfjord",
             "bulletpoints": [
                 {
                     "id": 1,
-                    "year": "2010",
-                    "descr": "Apprenticeship Chemical Processing"
+                    "year": "2012",
+                    "descr": "Trade Certificate: Chemical Processing"
                 },
                 {
                     "id": 0,
                     "year": "2008",
-                    "descr": "Chemical Processing / Technical and Industrial Production"
+                    "descr": "Chemical Processing"
                 }
             ]
         },
         {
             "id": 1,
-            "class": "school",
-            "title": "Technician",
-            "yearspan": "2010 - 2021",
-            "header": "Yara // Alere Technologies Oslo // Orkla CS",
+            "title_descr": "Technician (2010 - 2021)",
+            "start_year": "2010",
+            "icon": "fa-solid fa-toolbox",
+            "bulletpoints_header": "Yara, Alere Technologies, Orkla CS",
             "bulletpoints": [
                 {
                     "id": 2,
@@ -34,7 +34,7 @@
                 {
                     "id": 1,
                     "year": "2014",
-                    "descr": "Automation Technician"
+                    "descr": "Automation Technician, Projects & Engineering"
                 },
                 {
                     "id": 0,
@@ -45,10 +45,10 @@
         },
         {
             "id": 2,
-            "class": "work",
-            "title": "University",
-            "yearspan": "2021 - 2025",
-            "header": "Oslo Metropolitan University",
+            "title_descr": "University (2021 - 2025)",
+            "start_year": "2021",
+            "icon": "fa-solid fa-graduation-cap",
+            "bulletpoints_header": "Oslo Metropolitan University",
             "bulletpoints": [
                 {
                     "id": 1,
@@ -64,10 +64,10 @@
         },
         {
             "id": 3,
-            "class": "graduate",
-            "title": "Developer",
-            "yearspan": "2025 - ",
-            "header": "Your Company (?)",
+            "title_descr": "Developer (2025 - )",         
+            "start_year": "2025",
+            "icon": "briefcase",
+            "bulletpoints_header": "Your Awesome Company (?)",
             "bulletpoints": [
                 {
                     "id": 0,

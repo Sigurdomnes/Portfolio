@@ -1,8 +1,8 @@
-import Fullpage from '../../Modules/FullpageScroll/FullpageScroll'
+import FullpageScroll from '../../Modules/FullpageScroll/FullpageScroll'
 import './Projects.scss'
 import { useState } from 'react';
 import ProjectsLanding from './ProjectsLanding/ProjectsLanding';
-import ProjectCard from './ProjectsCard/ProjectsCard';
+import ProjectCard from './ProjectsCards/ProjectsCard';
 import jsonCards from './jsonProjectCards.json';
 
 function Projects() {
@@ -11,7 +11,7 @@ function Projects() {
   const cards = jsonCards.project_cards;
   return (
     <div>
-      <Fullpage
+      <FullpageScroll
         fullpageSlideIndex={fullpageSlideIndex}
         setFullpageSlideIndex={setFullpageSlideIndex}
         fullpageScrollPosition={fullpageScrollPosition}
@@ -31,7 +31,7 @@ function Projects() {
             index={fullpageSlideIndex}
             />
         ))}
-      </Fullpage>
+      </FullpageScroll>
     </div>
   )
 }

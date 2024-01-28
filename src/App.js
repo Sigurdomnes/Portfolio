@@ -2,7 +2,6 @@ import './App.css'
 import Hero from './Components/Pages/Hero/Hero'
 import NavBar from './Components/Pages/NavBar/NavBar'
 import Socials from './Components/Components/Socials/Socials'
-import About from './Components/Pages/About/About';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 import { fas } from '@fortawesome/free-solid-svg-icons'
@@ -14,6 +13,7 @@ import { EffectCube } from 'swiper/modules';
 import { useEffect, useState } from 'react';
 import ConctactForm from './Components/Components/ContactForm/ContactForm';
 import Projects from './Components/Pages/Projects/Projects';
+import About from './Components/Pages/About/About'
 
 function App() {
   const [contactFormIsActive, setContactFormIsActive] = useState(false);
@@ -21,10 +21,10 @@ function App() {
   const [typeWriterIsStarted, setTypeWriterIsStarted] = useState(false);
   const [darkMode, setDarkMode] = useState(true);
   const [cubeIndex, setCubeIndex] = useState(0);
-  // Jump effect on cube transition
+    // Jump effect on cube transition
   const [cubeZoom, setCubeZoom] = useState(false);
   const onCubeTransitionStart = () => {
-    // Sets className on Swiper
+    // Sets jump effect className on Swiper
     setCubeZoom(true);
   };
   const onCubeTransitionEnd = () => {
@@ -32,7 +32,7 @@ function App() {
       setCubeZoom(false);
     }, 350);
   }
-  // Set document title based on cube index
+    // Set document title based on cube index
   useEffect(() => {
     if (cubeIndex === 2) document.title = 'Sigurd Omnes - About'
     else if (cubeIndex === 1) document.title = 'Sigurd Omnes - Projects'
@@ -89,40 +89,20 @@ function App() {
             setContactFormIsActive={setContactFormIsActive}
             darkMode={darkMode}
             setDarkMode={setDarkMode}
-            button={true}
             activeLink={2}
-            btnText='About'
-            btnArrow={true}
             navMenuIsActive={navMenuIsActive}
             setNavMenuIsActive={setNavMenuIsActive}
             hide={true}
           />
           <Projects />
         </SwiperSlide>
-        {/* <SwiperSlide>
-          <NavBar
-            setContactFormIsActive={setContactFormIsActive}
-            darkMode={darkMode}
-            setDarkMode={setDarkMode}
-            button={true}
-            activeLink={2}
-            btnText='About'
-            btnArrow={true}
-            navMenuIsActive={navMenuIsActive}
-            setNavMenuIsActive={setNavMenuIsActive}
-          />
-          <Portfolio />
-      </SwiperSlide> */}
         <SwiperSlide>
           <NavBar
             header='About'
             setContactFormIsActive={setContactFormIsActive}
             darkMode={darkMode}
             setDarkMode={setDarkMode}
-            button={true}
             activeLink={3}
-            btnText='Get my resumé'
-            btnDownload={true}
             navMenuIsActive={navMenuIsActive}
             setNavMenuIsActive={setNavMenuIsActive}
           />
