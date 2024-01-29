@@ -16,8 +16,8 @@
 import { useIsInView } from '../../Hooks/useIsInView'
 import './IntoViewEffect.scss'
 
-function IntoViewEffect({ children, effect, threshold, margin, delay, duration }) {
-  const { isVisibleRef, isInView } = useIsInView(threshold, margin);
+function IntoViewEffect({ children, effect, threshold, margin, mobileMargin, delay, duration }) {
+  const { isVisibleRef, isInView } = useIsInView(threshold, margin, mobileMargin);
 
   return (
     <div aria-hidden={true} ref={isVisibleRef} className={`${effect} ${isInView ? 'is-in-view' : 'not-in-view'}`}

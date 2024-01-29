@@ -27,6 +27,14 @@
             @media screen and (max-width: 600px) {
                 font-size: 2.9rem;
             }
+
+            @media screen and (max-width: 360px) {
+                font-size: 2.5rem;
+            }
+
+            @media screen and (max-width: 310px) {
+                font-size: 2.2rem;
+            }
         }
         
             .hero-img {
@@ -47,7 +55,10 @@
 
             @media screen and (max-width: 600px) {
                 font-size: 1.5rem;
+            }
 
+            @media screen and (max-width: 310px) {
+                font-size: 1.3rem;
             }
         }
     }

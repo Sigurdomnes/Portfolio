@@ -4,11 +4,11 @@
             "id": 0,
             "name": "portfolio",
             "header": "Portfolio website",
-            "text": "This website is written from scratch in React. \n The responsive fullpage scroll module you are currently using to view these projects was written by me with JavaScript. \n\n Dive into the code if you'd like!",
+            "text": "This website is written from scratch in React with Redux. \n\n There are minimal external module imports and libraries in this project and almost every function is written by me with JavaScript. Including hooks and modules like the full page scroll and in view effects. \n\n Dive into the code if you'd like!",
             "languages": [
                 {
                     "id": 0,
-                    "name": "CSS",
+                    "name": "SCSS",
                     "percent": "52%"
                 },
                 {
@@ -28,7 +28,7 @@
             "id": 1,
             "name": "concept",
             "header": "Concept website",
-            "text": "Completely accessible and responsive. \n This website is written in clean best-practice HTML, fully accessible and compliant with every WCAG 2.1 guideline. It passes all tests for accesibility, screen readers, color-blindness and more. As required for websites by Norwegian law.\n\nTake a closer look!",
+            "text": "Completely accessible and responsive. \n\n This website is written in clean best-practice HTML/CSS, fully accessible and compliant with every WCAG 2.1 guideline. It passes all tests for accesibility, screen readers, color-blindness and more. As required for websites by Norwegian law.\n\nTake a closer look!",
             "languages": [
                 {
                     "id": 0,

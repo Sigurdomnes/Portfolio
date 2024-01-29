@@ -1,6 +1,7 @@
 import './ProjectsCard.scss'
 import '../Projects.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import reduxIcon from '../../../../img/redux.png'
 
 function ProjectsCard({ scrollPosition, ...props }) {
     // Array of prog languages from json object
@@ -25,7 +26,10 @@ function ProjectsCard({ scrollPosition, ...props }) {
                                 {language.name}<span className='projects-lang-pct'>{language.percent}</span>
                             </p>
                         ))}
-                        {props.name === 'portfolio' && <p className='projects-framework'><FontAwesomeIcon className='framework-icon' icon="fa-brands fa-react" />React</p>}
+                        <div className='project-frameworks-container'>
+                            {props.name === 'portfolio' && <p className='projects-framework'><FontAwesomeIcon className='framework-icon' icon="fa-brands fa-react" />React</p>}
+                            {props.name === 'portfolio' && <p className='projects-framework'><img className='redux-icon' src={reduxIcon} />Redux</p>}
+                        </div>
                     </div>
                     <div className='projects-card-btn-container'>
                         {props.deployedLink && <a href={props.deployedLink}><button className='projects-card-btn'><FontAwesomeIcon icon="fa-solid fa-globe" className="projects-card-btn-icon" />Deployed</button></a>}

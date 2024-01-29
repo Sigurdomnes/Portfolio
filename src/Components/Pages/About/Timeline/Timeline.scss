@@ -33,12 +33,20 @@
     &-header {
         display: flex;
         justify-content: center;
+        align-items: center;
         justify-self: center;
         color: var(--light-color);
         font-size: 6rem;
         height: 7rem;
         width: 100vw;
         background-color: var(--accentcolor);
+
+        @media screen and (max-width: 345px) {
+            font-size: 5rem;
+        }
+        @media screen and (max-width: 290px) {
+            font-size: 4rem;
+        }
     }
 
     &-content {
@@ -99,7 +107,7 @@
 
                 .timeline-event-circle:after {
                     width: .25rem;
-                    height: 3.8rem;
+                    height: 4.8rem;
                     transition: .2s linear;
                     transition-delay: .7s;
 
@@ -203,6 +211,14 @@
                             font-size: 1.4rem;
                             margin-bottom: .25rem;
                         }
+
+                        @media screen and (max-width: 335px) {
+                            font-size: 1.2rem;
+                        }
+
+                        @media screen and (max-width: 300px) {
+                            font-size: 1.1rem;
+                        }
                     }
 
                     &-bulletpoints {
@@ -216,6 +232,18 @@
 
                         @media screen and (max-width: 600px) {
                             margin-left: .3rem;
+                        }
+
+                        @media screen and (max-width: 360px) {
+                            font-size: .8rem;
+                        }
+
+                        @media screen and (max-width: 335px) {
+                            font-size: .7rem;
+                        }
+
+                        @media screen and (max-width: 300px) {
+                            font-size: .6rem;
                         }
                     }
                 }

@@ -29,7 +29,7 @@ function AboutMe() {
                     <IntoViewEffect effect='fade-in' margin={20} delay={.5} threshold={.3}>
                         {jsonAboutMe.aboutMe.text4}<br /><br />
                     </IntoViewEffect>
-                    <IntoViewEffect effect='fade-in' margin={10} delay={.7} threshold={.3}>
+                    <IntoViewEffect effect='fade-in' margin={10} mobileMargin={15} delay={.7} threshold={.3}>
                         {jsonAboutMe.aboutMe.text5}
                     </IntoViewEffect>
                 </p>
