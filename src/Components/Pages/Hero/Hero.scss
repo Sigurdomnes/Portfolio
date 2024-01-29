@@ -28,14 +28,14 @@
                 font-size: 2.9rem;
             }
         }
-
-        .img {
-            height: 30vh;
-            background: var(--accentcolor);
-            border-radius: 50%;
-            box-shadow: 0 0 6px #111;
-            margin: 2.7rem 0;
-        }
+        
+            .hero-img {
+                height: 30vh;
+                border-radius: 50%;
+                margin: 2.7rem 0;
+                background: var(--accentcolor);
+                box-shadow: 0 0 6px #111;
+            }
 
         .hero-content-center-par {
             font-family: BebasNeue;

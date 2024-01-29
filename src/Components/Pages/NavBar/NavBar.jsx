@@ -1,7 +1,6 @@
 import './NavBar.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useSwiper } from 'swiper/react';
-import RoundedBorderButton from '../../Components/RoundedBorderButton/RoundedBorderButton';
 import useClickOutside from '../../Hooks/useClickOutside';
 import { useEffect, useState } from 'react';
 import DarkModeToggleBtn from '../../Components/DarkModeToggleBtn/DarkModeToggleBtn';
@@ -56,15 +55,6 @@ const NavBar = ({ setContactFormIsActive, navMenuIsActive, setNavMenuIsActive, d
                             <path className="line line3" d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942" />
                         </svg>
                     </button>
-                    <div className='navmenu-nextpg-button'><FontAwesomeIcon className='navmenu-nextpg-icon' icon="fa-solid fa-arrow-right" /><div className='navmenu-nextpg-text'>Projects</div></div>
-                    {props.button &&
-                        <RoundedBorderButton
-                            className='navbar-mobile-nextpg-btn'
-                            text={props.btnText}
-                            arrow={props.btnArrow}
-                            download={props.btnDownload}
-                            height='3.5rem'
-                            onClick={() => { swiper.slideTo(2); setNavMenuIsActive(false); }} />}
                     <div className='nextarrow'>About<span className='arrow'></span></div>
                     <div className='nextarrow left'>Home<span className='arrow'></span></div>
                 </div>

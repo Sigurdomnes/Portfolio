@@ -1,11 +1,12 @@
+import { useSelector } from 'react-redux';
 import './Socials.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-function Socials(props) {
-
+function Socials() {
+    const cubeIndex = useSelector((state) => state.cubeIndex.index);
     return (
-        <div className={`socials-wrapper ${props.show ? 'active' : 'inactive'}`}>
-            <div className={`socials-content ${props.show ? 'active' : 'inactive'}`}>
+        <div className={`socials-wrapper ${cubeIndex === 0 ? 'active' : 'inactive'}`}>
+            <div className={`socials-content ${cubeIndex === 0 ? 'active' : 'inactive'}`}>
                 <a href='https://github.com/Sigurdomnes'><div className='socials-icons github-bg-color'>
                     <FontAwesomeIcon className='socials-icon' icon="fa-brands fa-github" />
                 </div></a>

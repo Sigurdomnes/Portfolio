@@ -72,7 +72,7 @@
                 font-size: 1rem;
                 margin: .5rem 0 1rem;
                 text-shadow: 0 0 8px #000;
-                white-space: pre-line;
+                white-space: pre-line; // This makes \n work in json
                 vertical-align: bottom;
 
                 @media screen and (min-width: 600px) {

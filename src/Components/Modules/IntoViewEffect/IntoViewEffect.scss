@@ -1,11 +1,11 @@
 .fade-in {
-    transition: 1.5s ease;
-
     &.not-in-view {
+        transition: 0.1s;
         opacity: 0;
     }
 
     &.is-in-view {
+        transition: 1s ease;
         opacity: 1;
     }
 
@@ -22,6 +22,7 @@
     &.is-in-view {
         opacity: 1;
         transform: translateY(0);
-        transition: transform .4s ease, opacity .2s linear;
+        transition: transform .4s ease, opacity .3s linear;
+
     }
 }

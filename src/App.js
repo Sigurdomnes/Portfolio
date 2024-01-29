@@ -10,21 +10,20 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/effect-cube';
 import { EffectCube } from 'swiper/modules';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import ConctactForm from './Components/Components/ContactForm/ContactForm';
 import Projects from './Components/Pages/Projects/Projects';
 import About from './Components/Pages/About/About'
+import { useDispatch } from 'react-redux'
+import { setCubeIndex } from './redux/features/cubeIndex/cubeIndexSlice'
 
 function App() {
+  const dispatch = useDispatch(); // setCubeIndex
   const [contactFormIsActive, setContactFormIsActive] = useState(false);
   const [navMenuIsActive, setNavMenuIsActive] = useState(false);
-  const [typeWriterIsStarted, setTypeWriterIsStarted] = useState(false);
   const [darkMode, setDarkMode] = useState(true);
-  const [cubeIndex, setCubeIndex] = useState(0);
-    // Jump effect on cube transition
-  const [cubeZoom, setCubeZoom] = useState(false);
-  const onCubeTransitionStart = () => {
-    // Sets jump effect className on Swiper
+  const [cubeZoom, setCubeZoom] = useState(false); // Jump effect on cube transition
+  const onCubeTransitionStart = () => { // Sets jump effect className on Swiper
     setCubeZoom(true);
   };
   const onCubeTransitionEnd = () => {
@@ -32,17 +31,9 @@ function App() {
       setCubeZoom(false);
     }, 350);
   }
-    // Set document title based on cube index
-  useEffect(() => {
-    if (cubeIndex === 2) document.title = 'Sigurd Omnes - About'
-    else if (cubeIndex === 1) document.title = 'Sigurd Omnes - Projects'
-    else document.title = 'Sigurd Omnes'
-  }, [cubeIndex])
   return (
     <div className='App'>
-      <Socials
-        show={cubeIndex === 0}
-      />
+      <Socials />
       <ConctactForm
         setContactFormIsActive={setContactFormIsActive}
         contactFormIsActive={contactFormIsActive} />
@@ -50,9 +41,7 @@ function App() {
         effect={'cube'}
         grabCursor={false}
         speed={1300}
-        onSlideChange={
-          (e) => { setCubeIndex(e.realIndex); if (e.realIndex === 2) { setTypeWriterIsStarted(true) }; }
-        }
+        onSlideChange={(e) => {dispatch(setCubeIndex(e.realIndex));}}
         onTransitionStart={onCubeTransitionStart}
         onTransitionEnd={onCubeTransitionEnd}
         allowTouchMove={false}
@@ -79,9 +68,7 @@ function App() {
             navMenuIsActive={navMenuIsActive}
             setNavMenuIsActive={setNavMenuIsActive}
           />
-          <Hero
-            show={cubeIndex === 0}
-          />
+          <Hero />
         </SwiperSlide>
         <SwiperSlide>
           <NavBar
@@ -106,9 +93,7 @@ function App() {
             navMenuIsActive={navMenuIsActive}
             setNavMenuIsActive={setNavMenuIsActive}
           />
-          <About
-            typeWriterIsStarted={typeWriterIsStarted}
-          />
+          <About/>
         </SwiperSlide>
       </Swiper>
     </div>

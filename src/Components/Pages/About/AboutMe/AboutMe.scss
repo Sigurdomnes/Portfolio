@@ -7,15 +7,89 @@
     background-color: var(--themecolor);
     width: 100%;
     z-index: 2;
-    padding-bottom: 50vh;
     padding-top: 2rem;
     color: var(--light-color);
 
     .about-me-header {
+        color: var(--light-color);
         font-size: 4rem;
+        transform: skew(-15deg, 0);
+
+        @media screen and (max-width: 600px) {
+            font-size: 2.3rem;
+        }
+
+        &-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            justify-self: center;
+            height: 6rem;
+            width: 42rem;
+            background-color: var(--accentcolor);
+            transform: skew(15deg, 0);
+
+            @media screen and (max-width: 600px) {
+                width: 90vw;
+                height: 4.5rem;
+            }
+        }
     }
 
     .about-me-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 115ch;
+        padding-top: 1rem;
+
+        &-img-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            height: 30rem;
+            width: 50vw;
+            border-radius: 2rem;
+            margin: 2rem 0;
+
+            @media screen and (max-width: 600px) {
+                width: 90vw;
+                height: 12rem;
+            }
+
+            .about-me-content-img {
+                width: 50vw;
+                transform: translate(0, -5rem);
+
+                @media screen and (max-width: 600px) {
+                    width: 90vw;
+                    transform: translate(0, -2.5rem);
+                }  
+            }
+        }
+
+        &-text {
+            text-align: center;
+            font-size: 1.2rem;
+            line-height: 2rem;
+            white-space: pre-line; // This makes \n work in json
+
+            @media screen and (max-width: 600px) {
+                width: 96vw;
+            }
+        }
 
     }
+}
+
+.get-my-resume-btn {
+        height: 3rem;
+        width: 10rem;
+        margin: 2rem 0;
+        font-family: BebasNeue;
+        font-size: 1.5rem;
+        color: var(--light-color);
+        background-color: var(--accentcolor);
+        cursor: pointer;
 }

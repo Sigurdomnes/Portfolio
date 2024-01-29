@@ -39,7 +39,7 @@
         color: #ccc;
         text-align: center;
         width: var(--width);
-        background-color: #191b22;
+        background-color: var(--themecolor);
         border-radius: 2rem;
         box-shadow: 0 0 10px #111;
 
@@ -68,7 +68,7 @@
         .contact-form-header {
             color: var(--accentcolor);
             margin: -1rem 0 2rem;
-            text-shadow: 0 0 3px #000;
+            text-shadow: 0 0 3px #0f0f0f;
             font-family: BebasNeue;
             letter-spacing: .3rem;
             font-size: 2rem;
@@ -87,7 +87,7 @@
             width: fit-content;
             justify-self: center;
             display: inline-block;
-            text-shadow: 0 0 3px #000;
+            text-shadow: 0 0 3px #0f0f0f;
             font-size: 1rem;
             margin: .3rem 0;
         }
@@ -139,12 +139,12 @@
                 justify-self: center;
                 height: 2.5rem;
                 cursor: pointer;
-                box-shadow: 0 0 3px #000;
+                box-shadow: 0 0 3px #0f0f0f;
                 background-color: var(--accentcolor);
                 color: var(--themecolor);
                 font-family: BebasNeue;
                 letter-spacing: .2rem;
-                font-size: 1.2rem;
+                font-size: 1.3rem;
             }
 
             .form-result {
@@ -153,7 +153,7 @@
                 height: 2.5rem;
                 font-weight: 750;
                 color: var(--accentcolor);
-                text-shadow: 0 0 3px #000;
+                text-shadow: 0 0 3px #0f0f0f;
             }
         }
     }

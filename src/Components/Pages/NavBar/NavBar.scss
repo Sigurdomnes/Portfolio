@@ -75,8 +75,8 @@
         box-shadow: 0 0 1px #888;
         background-color: transparent;
         pointer-events: all;
-        text-shadow: 0 0 10px var(--dark-color);
-        filter: drop-shadow(0 0 5px #222);
+        text-shadow: 0 0 3px var(--dark-color);
+        filter: drop-shadow(0 0 3px #222);
 
         &.navbar-logo-mobile {
 
@@ -240,8 +240,8 @@
           border-radius: 0.2rem;
           color: var(--color);
           transition: 0.5s ease;
-          background-color: #11111115;
-          filter: drop-shadow(0 0 10px #222);
+          background-color: #11111110;
+          filter: drop-shadow(0 0 3px #222);
 
           @media screen and (max-width: 600px) {
             width: 100vw;
@@ -304,8 +304,8 @@
           transition: ease 0.5s;
           border-radius: 0.1rem;
           pointer-events: all;
-          background-color: #11111115;
-          filter: drop-shadow(0 0 10px #111);
+          background-color: #11111110;
+          filter: drop-shadow(0 0 3px #111);
 
           @media screen and (max-width: 600px) {
             display: none;
@@ -325,18 +325,6 @@
           @media screen and (max-width: 600px) {
             display: flex;
           }
-        }
-      }
-
-      .navbar-mobile-nextpg-btn {
-        position: absolute;
-        left: 1.5rem;
-        top: 1.55rem;
-        align-self: center;
-        display: none;
-
-        @media screen and (min-width: 600px) {
-          display: none;
         }
       }
 
@@ -446,39 +434,6 @@
             align-items: center;
             transition: .3s ease;
           }
-        }
-      }
-
-      .navmenu-nextpg-button {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: absolute;
-        right: 0;
-        bottom: calc(21vh - 4rem);
-        height: 4rem;
-        width: 4rem;
-        background-color: var(--accentcolor);
-        text-align: center;
-        border-top-left-radius: .5rem;
-        border-bottom-left-radius: .5rem;
-        box-shadow: 0 0 5px #000;
-        display: none;
-
-        .navmenu-nextpg-icon {
-          transform: rotate(315deg);
-          position: absolute;
-          top: 0;
-          right: 0;
-          height: 2.1rem;
-        }
-
-        .navmenu-nextpg-text {
-          color: var(--light-color);
-          font-size: 1.2rem;
-          transform: rotate(45deg);
-          text-shadow: 0 0 3px #000;
-          font-family: BebasNeue;
         }
       }
 

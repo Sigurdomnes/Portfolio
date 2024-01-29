@@ -8,10 +8,6 @@
     overflow: hidden;
     z-index: 2;
 
-    /*      -webkit-clip-path: polygon(0 0, 100% 10%, 100% 100%, 0% 100%);
-    clip-path: polygon(0 10%, 100% 0, 100% 100%, 0% 100%);  */
-
-
     --event-width: 56vw;
     --circle-color: var(--accentcolor);
 
@@ -54,7 +50,7 @@
         flex-direction: column-reverse;
         align-items: center;
         align-self: center;
-        padding-top: 4rem;
+        padding-top: 6rem;
 
         @media screen and (max-width: 600px) {
             padding-top: 2rem;
@@ -125,7 +121,7 @@
             justify-content: start;
             height: 12rem;
             width: var(--event-width);
-            margin-bottom: 1rem;
+            margin-bottom: 2rem;
 
             @media screen and (max-width: 600px) {
                 width: 95vw;
