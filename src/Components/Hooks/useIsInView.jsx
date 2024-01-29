@@ -2,20 +2,21 @@ import { useEffect, useRef, useState } from "react";
 
 export function useIsInView(threshold, margin, mobileMargin) {
     const isVisibleRef = useRef();
+    const onPageLoad = useRef(true);
     const [isInView, setIsInView] = useState(false);
     const [width, setWidth] = useState(window.innerWidth);
 
     function handleWindowSizeChange() {
-      setWidth(window.innerWidth);
+        setWidth(window.innerWidth);
     }
     useEffect(() => {
-      window.addEventListener('resize', handleWindowSizeChange);
-      return () => {
-        window.removeEventListener('resize', handleWindowSizeChange);
-      }
+        window.addEventListener('resize', handleWindowSizeChange);
+        return () => {
+            window.removeEventListener('resize', handleWindowSizeChange);
+        }
     }, []);
-  
-    const isMobile = width <= 768;
+
+    const isMobile = width <= 600;
 
     const handleIntersect = (inView) => {
         console.log();
@@ -25,10 +26,15 @@ export function useIsInView(threshold, margin, mobileMargin) {
 
     useEffect(() => {
         const observer = new IntersectionObserver(([entry]) =>
-            handleIntersect(entry.isIntersecting),
+         { if (!onPageLoad.current && entry) {
+            handleIntersect(entry.isIntersecting)
+          } else {
+            onPageLoad.current = false;
+          }
+        },
             {
                 root: null,
-                rootMargin: isMobile ? mobileMargin ? "-" + mobileMargin + "%" : "-20%" : margin ? "-" + margin + "%" : "-15%" ,
+                rootMargin: isMobile ? mobileMargin ? "-" + mobileMargin + "%" : "-25%" : margin ? "-" + margin + "%" : "-25%",
                 threshold: threshold ? threshold : 0
             }
         );
@@ -36,7 +42,9 @@ export function useIsInView(threshold, margin, mobileMargin) {
         observer.observe(isVisibleRef.current);
         return () => {
             observer.disconnect();
+            onPageLoad.current = true;
         };
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [isVisibleRef]);
 
     return { isVisibleRef, isInView }

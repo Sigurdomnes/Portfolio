@@ -70,6 +70,7 @@
                     text-transform: uppercase;
                     text-anchor: middle;
                     alignment-baseline: middle;
+                    dominant-baseline: middle;
                     font-size: 40rem;
 
                     @media screen and (max-width: 600px) {
@@ -79,7 +80,7 @@
                     }
 
                     &.top {
-                        transform: translate(-1rem, 22.7rem);
+                        transform: translate(-1rem, 23.5rem);
 
                         @media screen and (max-width: 600px) {
                             transform: translate(-.4rem, 55vh);
@@ -87,7 +88,7 @@
                     }
 
                     &.bottom {
-                        transform: translate(-1rem, 51.7rem);
+                        transform: translate(-1rem, 53.5rem);
 
                         @media screen and (max-width: 600px) {
                             transform: translate(-.4rem, 66vh);

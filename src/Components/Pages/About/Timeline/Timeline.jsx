@@ -10,7 +10,7 @@ function Timeline() {
             <h1 className='timeline-header'>My Timeline</h1>
             <div className="timeline-content">
                 {cards.map((card) => (
-                    <IntoViewEffect effect='slide-in-bottom'>
+                    <IntoViewEffect effect='slide-in-bottom' margin={35}>
                         <div key={card.id} className={`timeline-event ${card.id % 2 === 0 ? 'even' : 'odd'} ${card.id === 0 ? 'start' : ''} `}>
                             <div className={`timeline-event-circle `} style={{ '--circle-color': card.color }}>
                                 <h1 className='timeline-event-circle-year'>{card.start_year}</h1>

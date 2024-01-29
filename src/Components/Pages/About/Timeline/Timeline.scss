@@ -5,7 +5,6 @@
     display: grid;
     justify-content: center;
     color: var(--dark-color);
-    overflow: hidden;
     z-index: 2;
 
     --event-width: 56vw;
@@ -118,7 +117,7 @@
 
         .timeline-event {
             display: flex;
-            justify-content: start;
+            justify-content: flex-start;
             height: 12rem;
             width: var(--event-width);
             margin-bottom: 2rem;
