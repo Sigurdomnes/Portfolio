@@ -41,10 +41,16 @@
         width: 100vw;
         background-color: var(--accentcolor);
 
-        @media screen and (max-width: 345px) {
+        @media screen and (max-width: 360px) {
+            font-size: 5.5rem;
+        }
+        @media screen and (max-width: 330px) {
             font-size: 5rem;
         }
-        @media screen and (max-width: 290px) {
+        @media screen and (max-width: 300px) {
+            font-size: 4.5rem;
+        }
+        @media screen and (max-width: 270px) {
             font-size: 4rem;
         }
     }
