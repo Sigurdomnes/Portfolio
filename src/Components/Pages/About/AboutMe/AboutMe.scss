@@ -81,7 +81,7 @@
             text-align: center;
             font-size: 1.2rem;
             line-height: 2rem;
-            white-space: pre-line; // This makes \n work in json
+            white-space: pre-line; /* This makes \n work in json */
 
             @media screen and (max-width: 600px) {
                 width: 96vw;

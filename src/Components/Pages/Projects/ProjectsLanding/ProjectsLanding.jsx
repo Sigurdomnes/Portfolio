@@ -1,5 +1,3 @@
-import '../Projects.scss'
-import './ProjectsLanding.scss'
 import landingimg from '../../../../img/projectslanding.svg'
 import RoundedBorderButton from '../../../Components/RoundedBorderButton/RoundedBorderButton';
 import { useSwiper } from 'swiper/react';

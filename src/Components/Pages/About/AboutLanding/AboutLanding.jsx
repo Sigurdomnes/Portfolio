@@ -1,4 +1,3 @@
-import './AboutLanding.scss'
 /* import { useEffect, useState } from 'react';
 import bg1 from '../../../../img/meg1.jpg'
 import bg2 from '../../../../img/meg2.jpg' */

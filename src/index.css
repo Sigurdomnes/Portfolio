@@ -1,13 +1,34 @@
+@import './App.css';
+
+@import './Components/Components/ContactForm/ContactForm.scss';
+@import './Components/Components/DarkModeToggleBtn/DarkModeToggleBtn.scss';
+@import './Components/Components/HexagonBackground/HexagonBackground.css';
+@import './Components/Components/RoundedBorderButton/RoundedBorderButton.scss';
+@import './Components/Components/Socials/Socials.scss';
+
+@import './Components/Pages/About/About.scss';
+@import './Components/Pages/About/AboutLanding/AboutLanding.scss';
+@import './Components/Pages/About/AboutMe/AboutMe.scss';
+@import './Components/Pages/About/Timeline/Timeline.scss';
+
+@import './Components/Pages/Hero/Hero.scss';
+
+@import './Components/Pages/NavBar/NavBar.scss';
+
+@import './Components/Pages/Projects/Projects.scss';
+@import './Components/Pages/Projects/ProjectsCards/ProjectsCard.scss';
+@import './Components/Pages/Projects/ProjectsLanding/ProjectsLanding.scss';
+
 @font-face {
   font-family: "BebasNeue";
   src: local("BebasNeue-Regular"),
-    url("./fonts/BebasNeue-Regular.ttf") format("woff");
+    url("../fonts/BebasNeue-Regular.ttf") format("woff");
 }
 
 @font-face {
   font-family: "Montserrat";
   src: local("Montserrat"),
-    url("./fonts/Montserrat/Montserrat-VariableFont_wght.ttf")
+    url("../fonts/Montserrat/Montserrat-VariableFont_wght.ttf")
       format("truetype");
 }
 
@@ -16,36 +37,36 @@
   font-weight: 1000;
   font-style: normal;
   src: local("Montserrat-Alt1"),
-    url("./fonts/Montserrat-Alt1-0.3.2/fonts/webfonts/MontserratAlt1-Light.woff")
+    url("../fonts/Montserrat-Alt1-0.3.2/fonts/webfonts/MontserratAlt1-Light.woff")
       format("woff"),
-    url("./fonts/Montserrat-Alt1-0.3.2/fonts/webfonts/MontserratAlt1-Light.woff2")
+    url("../fonts/Montserrat-Alt1-0.3.2/fonts/webfonts/MontserratAlt1-Light.woff2")
       format("woff2");
 }
 
 @font-face {
   font-family: "Audiowide";
   src: local("Audiowide"),
-    url("./fonts/Audiowide/Audiowide-Regular.ttf") format("truetype");
+    url("../fonts/Audiowide/Audiowide-Regular.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "Open-Sans";
   src: local("Open-Sans"),
-    url("./fonts/Open_Sans/OpenSans-VariableFont_wdth\,wght.ttf")
+    url("../fonts/Open_Sans/OpenSans-VariableFont_wdthwght.ttf")
       format("truetype");
 }
 
 @font-face {
   font-family: "JetBrainsMono";
   src: local("JetBrainsMono"),
-    url("./fonts/JetBrainsMono-2.304/fonts/ttf/JetBrainsMonoNL-Regular.ttf")
+    url("../fonts/JetBrainsMono-2.304/fonts/ttf/JetBrainsMonoNL-Regular.ttf")
       format("truetype");
 }
 
 @font-face {
   font-family: "Raleway";
   src: local("Raleway"),
-    url("./fonts/Raleway/Raleway-VariableFont_wght.ttf")
+    url("../fonts/Raleway/Raleway-VariableFont_wght.ttf")
       format("truetype");
 }
 

@@ -1,5 +1,4 @@
 import FullpageScroll from '../../Modules/FullpageScroll/FullpageScroll'
-import './Projects.scss'
 import { useState } from 'react';
 import ProjectsLanding from './ProjectsLanding/ProjectsLanding';
 import ProjectCard from './ProjectsCards/ProjectsCard';

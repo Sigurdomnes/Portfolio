@@ -1,4 +1,3 @@
-import './NavBar.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useSwiper } from 'swiper/react';
 import useClickOutside from '../../Hooks/useClickOutside';

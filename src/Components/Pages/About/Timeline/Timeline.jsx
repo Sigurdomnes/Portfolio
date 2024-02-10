@@ -1,4 +1,3 @@
-import './Timeline.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import IntoViewEffect from '../../../Modules/IntoViewEffect/IntoViewEffect'
 import jsonCards from './jsonTimelineCards.json'

@@ -1,4 +1,3 @@
-import './App.css'
 import Hero from './Components/Pages/Hero/Hero'
 import NavBar from './Components/Pages/NavBar/NavBar'
 import Socials from './Components/Components/Socials/Socials'

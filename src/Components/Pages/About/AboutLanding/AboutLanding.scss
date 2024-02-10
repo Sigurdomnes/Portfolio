@@ -8,7 +8,7 @@
     overflow: hidden;
     background-color: var(--themecolor);
     position: relative;
-    --backgroundimage: url(../../../../img/meg3.jpg);
+    --backgroundimage: url(../img/meg3.jpg);
 
     @media screen and (max-width: 600px) {
         height: calc(100dvh - 6.7rem);

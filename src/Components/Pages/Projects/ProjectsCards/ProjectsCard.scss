@@ -9,11 +9,11 @@
     color: #ddd;
 
     &.portfolio {
-        background-image: url(../../../../img/portfoliobackground.jpg);
+        background-image: url(../img/portfoliobackground.jpg);
     }
 
     &.concept {
-        background-image: url(../../../../img/conseptbackground.jpg);
+        background-image: url(../img/conseptbackground.jpg);
     }
 
     .projects-card-blocker {
@@ -76,7 +76,7 @@
                 font-size: 1rem;
                 margin: .5rem 0 1rem;
                 text-shadow: 0 0 8px #000;
-                white-space: pre-line; // This makes \n work in json
+                white-space: pre-line; /* This makes \n work in json */
                 vertical-align: bottom;
 
                 @media screen and (min-width: 600px) {
@@ -201,6 +201,7 @@
                     background-color: #ddd;
                     box-shadow: 0 0 2px #000;
                     cursor: pointer;
+                    pointer-events: all;
 
                     @media screen and (min-width: 600px) {
                         margin: 2rem 0 0;

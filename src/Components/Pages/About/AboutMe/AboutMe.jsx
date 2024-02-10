@@ -1,8 +1,7 @@
 import IntoViewEffect from '../../../Modules/IntoViewEffect/IntoViewEffect'
-import './AboutMe.scss'
 import jsonAboutMe from './jsonAboutMe.json'
 import meg from '../../../../img/meg2.jpg'
-import cv from '../../../../download/CV_Sigurd_Omnes.pdf'
+import cv from '../../../../files/CV_Sigurd_Omnes.pdf'
 
 function AboutMe() {
     return (

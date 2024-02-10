@@ -1,5 +1,3 @@
-import './ProjectsCard.scss'
-import '../Projects.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import reduxIcon from '../../../../img/redux.png'
 

@@ -70,7 +70,7 @@
         }
 
 
-        // START - Into view animations
+        /* START - Into view animations */
 
         .is-in-view {
             .timeline-event {
@@ -127,7 +127,7 @@
             }
         }
 
-        // END - into view animations
+        /*  END - into view animations */
 
         .timeline-event {
             display: flex;
@@ -312,7 +312,7 @@
                 }
             }
 
-            // START - nth-child adjustments
+            /* START - nth-child adjustments */
 
             &.start .timeline-event-circle {
                 &:after {

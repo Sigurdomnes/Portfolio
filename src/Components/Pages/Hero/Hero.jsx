@@ -1,4 +1,3 @@
-import './Hero.scss'
 import avatar from '../../../img/avatar.svg'
 import { useSwiper } from 'swiper/react';
 import RoundedBorderButton from '../../Components/RoundedBorderButton/RoundedBorderButton';

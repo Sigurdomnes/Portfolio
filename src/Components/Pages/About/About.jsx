@@ -1,4 +1,3 @@
-import './About.scss'
 import AboutLanding from './AboutLanding/AboutLanding'
 import AboutMe from './AboutMe/AboutMe'
 import Timeline from './Timeline/Timeline'
