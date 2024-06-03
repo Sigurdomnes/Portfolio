@@ -1,4 +1,3 @@
-import './RoundedBorderButton.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 function RoundedBorderButton(props) {

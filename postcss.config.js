@@ -1,5 +1,6 @@
 module.exports = {
     parser: require('postcss-comment'),
+    syntax: 'postcss-scss',
     plugins: [
         require('postcss-import'),
         require('postcss-nested'),

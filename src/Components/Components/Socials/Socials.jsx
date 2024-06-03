@@ -1,5 +1,4 @@
 import { useSelector } from 'react-redux';
-import './Socials.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 function Socials() {

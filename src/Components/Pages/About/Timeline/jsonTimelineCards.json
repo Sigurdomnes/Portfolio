@@ -24,21 +24,24 @@
             "title_descr": "Technician (2010 - 2021)",
             "start_year": "2010",
             "icon": "fa-solid fa-toolbox",
-            "bulletpoints_header": "Yara, Alere Technologies, Orkla CS",
+            "bulletpoints_header": "Process / Automation Technician",
             "bulletpoints": [
                 {
                     "id": 2,
                     "year": "2018",
+                    "company": "Orkla CS",
                     "descr": "Chief Production Operator"
                 },
                 {
                     "id": 1,
                     "year": "2014",
-                    "descr": "Automation Technician, Projects & Engineering"
+                    "company": "Alere Techn.",
+                    "descr": "Projects & Engineering Technician"
                 },
                 {
                     "id": 0,
                     "year": "2010",
+                    "company": "Yara",
                     "descr": "Process Technician"
                 }
             ]
@@ -64,15 +67,21 @@
         },
         {
             "id": 3,
-            "title_descr": "Developer (2025 - )",         
-            "start_year": "2025",
+            "title_descr": "Developer (2024 - )",         
+            "start_year": "2024",
             "icon": "briefcase",
-            "bulletpoints_header": "Your Awesome Company (?)",
+            "bulletpoints_header": "Computer Engineer",
             "bulletpoints": [
                 {
                     "id": 0,
                     "year": "2025",
-                    "descr": "Computer Engineer / Full Stack Developer"
+                    "descr": "Your Awesome Company (?)"
+                },
+                {
+                    "id": 1,
+                    "year": "2024",
+                    "company": "Norsk Helsenett SF",
+                    "descr": "Developer (Summer Student)"
                 }
             ]
         }

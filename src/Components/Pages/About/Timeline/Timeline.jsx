@@ -26,7 +26,7 @@ function Timeline() {
                                     {card.bulletpoints.map((bulletpoint) => (
                                         <h4 className='timeline-event-card-content-bulletpoints' key={bulletpoint.id}>
                                             <span className='timeline-event-card-content-bulletpoints-span'>
-                                                {bulletpoint.year} &bull; {bulletpoint.descr}
+                                                {bulletpoint.year} &bull; <div>{bulletpoint.company && <span>{bulletpoint.company} - </span>}{bulletpoint.descr}</div>
                                             </span>
                                         </h4>
                                     ))}

@@ -26,7 +26,7 @@ function ProjectsCard({ scrollPosition, ...props }) {
                         ))}
                         <div className='project-frameworks-container'>
                             {props.name === 'portfolio' && <p className='projects-framework'><FontAwesomeIcon className='framework-icon' icon="fa-brands fa-react" />React</p>}
-                            {props.name === 'portfolio' && <p className='projects-framework'><img className='redux-icon' src={reduxIcon} />Redux</p>}
+                            {props.name === 'portfolio' && <p className='projects-framework'><img className='redux-icon' alt='Redux' src={reduxIcon} />Redux</p>}
                         </div>
                     </div>
                     <div className='projects-card-btn-container'>

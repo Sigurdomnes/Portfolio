@@ -46,7 +46,8 @@
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",
-      "last 1 safari version"
+      "last 1 safari version",
+      "last 1 ie version"
     ]
   },
   "devDependencies": {
@@ -66,6 +67,7 @@
     "postcss-loader": "^8.1.0",
     "postcss-nested": "^6.0.1",
     "postcss-preset-env": "^9.3.0",
+    "postcss-scss": "^4.0.9",
     "sass": "^1.70.0",
     "style-loader": "^3.3.4"
   }

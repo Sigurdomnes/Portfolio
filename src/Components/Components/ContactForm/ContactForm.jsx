@@ -1,4 +1,3 @@
-import './ContactForm.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import emailjs from '@emailjs/browser';
 import { useRef, useState } from 'react';

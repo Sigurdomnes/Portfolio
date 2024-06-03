@@ -196,7 +196,7 @@
 
                 &-content {
                     width: 75%;
-                    padding: 1.5rem 2rem;
+                    padding: 1.2rem 2rem;
 
                     @media screen and (max-width: 600px) {
                         width: 100%;
@@ -206,7 +206,7 @@
                     }
 
                     &-header {
-                        font-size: 1.6rem;
+                        font-size: 1.8rem;
 
                         @media screen and (max-width: 1080px) {
                             font-size: 1.5rem;
@@ -228,13 +228,18 @@
                     }
 
                     &-bulletpoints {
+                        font-size: 1.1rem;
                         @media screen and (max-width: 600px) {
                             font-size: .85rem;
                         }
                     }
 
                     &-bulletpoints-span {
-                        margin-left: 1rem;
+                        margin-left: .5rem;
+                        display: grid;
+                        grid-auto-flow: column;
+                        justify-content: start;
+                        grid-gap: .25rem;
 
                         @media screen and (max-width: 600px) {
                             margin-left: .3rem;
